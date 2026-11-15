@@ -1,0 +1,11 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# SAS scratch files
+*.lck
+*.sas7bcat.lck
+*.sas7bdat.lck
+.sasstudio/
