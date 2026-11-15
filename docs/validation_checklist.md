@@ -8,7 +8,7 @@ Complete one section per program after each run. Save the log in `logs/` with th
 |---|---|---|---|---|---|---|---|
 | 00_setup.sas | 2026-11-15 | Yes (logs/00_setup_log.html, re-run with MH and VS, 19 datasets) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
 | 00_explore_sdtm.sas | 2026-11-15 | Yes (logs/00_explore_sdtm_log.html, run 2) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
-| 01_adsl.sas | | | | | | | |
+| 01_adsl.sas | 2026-11-15 | Yes (logs/01_adsl_log.html) | Yes | Yes | Yes | Yes | rushadnihal / Claude | |
 | 02_adae.sas | | | | | | | |
 | 03_adtte.sas | | | | | | | |
 | 04_tables.sas | | | | | | | |
@@ -19,7 +19,7 @@ Complete one section per program after each run. Save the log in `logs/` with th
 
 | Dataset | One record per expected key | Subject count matches SDTM | Variable names, labels, types per spec | No unexpected missing values | Derivations spot-checked |
 |---|---|---|---|---|---|
-| ADSL | | | | | |
+| ADSL | Yes (254 rows, 254 subjects) | Yes (254 randomized; 52 screen failures excluded by design) | Yes (labels and lengths per docs/adsl_spec.md; 48 variables) | Only expected: 1 subject without baseline weight/BMI | Yes: flag, dose, disposition, site and group counts match PHUSE ADSL; see 01_adsl_results.html |
 | ADAE | | | | | |
 | ADTTE | | | | | |
 
