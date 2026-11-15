@@ -9,6 +9,7 @@ Complete one section per program after each run. Save the log in `logs/` with th
 | 00_setup.sas | 2026-11-15 | Yes (logs/00_setup_log.html, re-run with MH and VS, 19 datasets) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
 | 00_explore_sdtm.sas | 2026-11-15 | Yes (logs/00_explore_sdtm_log.html, run 2) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
 | 01_adsl.sas | 2026-11-15 | Yes (logs/01_adsl_log.html) | Yes | Yes | Yes | Yes | rushadnihal / Claude | |
+| 90_qc_adsl.sas | 2026-11-15 | Yes (logs/90_qc_adsl_log.html) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
 | 02_adae.sas | | | | | | | |
 | 03_adtte.sas | | | | | | | |
 | 04_tables.sas | | | | | | | |
@@ -27,7 +28,7 @@ Complete one section per program after each run. Save the log in `logs/` with th
 
 | Dataset | Compare run | Differences found | Explanation / resolution |
 |---|---|---|---|
-| ADSL | | | |
+| ADSL | 2026-11-15 (docs/90_qc_adsl_results.html) | 1 value: BMIBLGR1 for 01-702-1082 (reference `<25`, derived blank). Attribute differences only: lengths of AGEU, RACE, ETHNIC, RFSTDTC, RFENDTC. | Expected and documented in docs/adsl_spec.md: subject has no baseline weight, so BMI is missing and no group is assigned. 253 of 254 records match on all 48 variables. |
 | ADAE | | | |
 | ADTTE | | | |
 

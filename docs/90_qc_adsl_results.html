@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html class="ods_11975252-dcf9-40e8-8745-fd3f719e2fed" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="SAS 9.4" name="generator"/>
+<title>Results: 90_qc_adsl.sas</title>
+<style>
+/*<![CDATA[*/
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.c section > table, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.c section > pre, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.c div > table,
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.c div > pre, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.c article > table, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.c article > pre,
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.j section > table, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.j section > pre, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.j div > table,
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.j div > pre, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.j article > table, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.j article > pre,
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.c p.note, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.c p.warning, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.c p.error, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.c p.fatal,
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.j p.note, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.j p.warning, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.j p.error, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.j p.fatal,
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.c > table.layoutcontainer, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.l table, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.l pre, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.l p.note,
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.l p.warning, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.l p.error, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.l p.fatal { margin-left: 0 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.c table, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.c pre, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.c p.note,
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.c p.warning, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.c p.error, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.r table, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.r pre, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.r p.note,
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.r table, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.r pre, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.r p.note,
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.r p.warning, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.r p.error, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion.r p.fatal { margin-right: 0 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed article, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed aside, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed details, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed figcaption, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed figure, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed footer, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed header, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed hgroup, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed nav, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed section { display: block }
+html.ods_11975252-dcf9-40e8-8745-fd3f719e2fed { font-size: 100% }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body { margin: 1em; font-size: 13px; line-height: 1.231 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed ul, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed ol { margin: 1em 0; padding: 0 0 0 40px }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed dd { margin: 0 0 0 40px }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed nav ul, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed img { border: 0; vertical-align: middle }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed svg:not(:root) { overflow: hidden }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed figure { margin: 0 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed table { border-collapse: collapse; border-spacing: 0 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutcontainer { border-collapse: separate; border-spacing: 0 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed p { margin-top: 0; text-align: left }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed h1.heading1 { text-align: left }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed h2.heading2 { text-align: left }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed h3.heading3 { text-align: left }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed h4.heading4 { text-align: left }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed h5.heading5 { text-align: left }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed h6.heading6 { text-align: left }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed span { text-align: left }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed table { margin-bottom: 1em }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed td, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed th { text-align: left; padding: 3px 6px; vertical-align: top }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed td[class$="fixed"], .ods_11975252-dcf9-40e8-8745-fd3f719e2fed th[class$="fixed"] { white-space: pre }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed section, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed article { padding-top: 1px; padding-bottom: 8px }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .stacked-value { text-align: left; display: block }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .stacked-cell > .stacked-value, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed td.data > td.data, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed th.data > td.data, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed th.data > th.data, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed td.data > th.data, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed th.header > th.header { border: 0 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .stacked-cell > div.data { border-width: 0 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systitleandfootercontainer > p { margin: 0 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .batch { display: table }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .toc { display: none }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .proc_note_group, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .proc_title_group { margin-bottom: 1em }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed p.proctitle { margin: 0 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed p.note, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed p.warning, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed p.error, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed p.fatal { display: table }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .notebanner, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .warnbanner, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .errorbanner, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .fatalbanner,
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .notecontent, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .warncontent, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .errorcontent, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .fatalcontent { display: table-cell; padding: 0.5em }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .notebanner, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .warnbanner, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .errorbanner, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .fatalbanner { padding-right: 0 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body > div > ol li { text-align: left }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .c { text-align: center }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .r { text-align: right }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .l { text-align: left }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .j { text-align: justify }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .d { text-align: right }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .b { vertical-align: bottom }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .m { vertical-align: middle }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .t { vertical-align: top }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .accessiblecaption {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed a:active { color: #800080 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .batch > tbody, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .batch > thead, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .batch { border: hidden; }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .bylinecontainer > col, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .bylinecontainer > colgroup > col, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .bylinecontainer > colgroup, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .bylinecontainer > tr, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .bylinecontainer > * > tr, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .bylinecontainer > thead, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .bylinecontainer > tbody, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .bylinecontainer > tfoot { border: none; }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .cell, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .contentfolder, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .contentproclabel, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .data, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .graph > tbody, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .graph > thead, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .graph { border: hidden; }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .heading1, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .heading2, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .heading3, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .heading4, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .heading5, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .heading6 { font-family: Arial, Helvetica, sans-serif }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .indexaction, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutcontainer, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed a:link { color: #0000ff }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .list3, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .list4, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .list5, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .list6, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .list7, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .list8, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .listitem3, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .listitem4, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .listitem5, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .listitem6, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .listitem7, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .listitem8, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .output > tbody, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .output > thead, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .output { border: hidden; }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .pagesproclabel, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .parskip > col, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .parskip > colgroup > col, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .parskip > colgroup, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .parskip > tr, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .parskip > * > tr, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .parskip > thead, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .parskip > tbody, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .parskip > tfoot { border: none; }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemfooter, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemfooter10, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemfooter2, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemfooter3, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemfooter4, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemfooter5, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemfooter6, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemfooter7, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemfooter8, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemtitle, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemtitle10, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemtitle2, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemtitle3, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemtitle4, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemtitle5, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemtitle6, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemtitle7, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemtitle8, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systitleandfootercontainer > col, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systitleandfootercontainer > colgroup > col, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systitleandfootercontainer > colgroup, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systitleandfootercontainer > tr, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systitleandfootercontainer > * > tr, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systitleandfootercontainer > thead, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systitleandfootercontainer > tbody, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systitleandfootercontainer > tfoot { border: none; }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .table > col, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .table > tr, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .table { border: hidden; }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .titleandnotecontainer > col, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .titleandnotecontainer > colgroup > col, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .titleandnotecontainer > colgroup, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .titleandnotecontainer > tr, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .titleandnotecontainer > * > tr, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .titleandnotecontainer > thead, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .titleandnotecontainer > tbody, .ods_11975252-dcf9-40e8-8745-fd3f719e2fed .titleandnotecontainer > tfoot { border: none; }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed a:visited { color: #800080 }
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_11975252-dcf9-40e8-8745-fd3f719e2fed .warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+</head>
+<body class="body">
+<div id="div_11975252-dcf9-40e8-8745-fd3f719e2fed" class="c body">
+<h1 class="body toc">Results: 90_qc_adsl.sas</h1>
+<section data-name="Compare" data-sec-type="proc">
+<div id="IDX" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">ADSL QC: derived ADAM.ADSL (compare) vs PHUSE reference ADSL (base)</span> </p>
+</div>
+<h1 class="contentprocname toc">The Compare Procedure</h1>
+<article aria-label="Datasets">
+<h1 class="contentitem toc">Datasets</h1>
+<pre class="batch" style="border-spacing: 1px">
+                                                       The COMPARE Procedure                                                        
+                                           Comparison of WORK.ADSL_REF with WORK.ADSL_NEW                                           
+                                               (Method=ABSOLUTE, Criterion=0.000001)                                                
+                                                                                                                                    
+                                                         Data Set Summary                                                           
+                                                                                                                                    
+                                  Dataset                 Created          Modified  NVar    NObs                                   
+                                                                                                                                    
+                                  WORK.ADSL_REF  15NOV26:16:11:08  15NOV26:16:11:08    48     254                                   
+                                  WORK.ADSL_NEW  15NOV26:16:11:08  15NOV26:16:11:08    48     254                                   
+                                                                                                                                    
+                                                                                                                                    
+                                                         Variables Summary                                                          
+                                                                                                                                    
+                                         Number of Variables in Common: 48.                                                         
+                                         Number of Variables with Differing Attributes: 5.                                          
+                                         Number of ID Variables: 1.                                                                 
+</pre>
+</article>
+<article id="IDX1" aria-label="Variables">
+<h1 class="contentitem toc">Variables</h1>
+<pre class="batch" style="border-spacing: 1px">
+                                                                                                                                    
+                                                                                                                                    
+                                       Listing of Common Variables with Differing Attributes                                        
+                                                                                                                                    
+                              Variable  Dataset        Type  Length  Label                                                          
+                                                                                                                                    
+                              AGEU      WORK.ADSL_REF  Char       5  Age Units                                                      
+                                        WORK.ADSL_NEW  Char       6  Age Units                                                      
+                              RACE      WORK.ADSL_REF  Char      32  Race                                                           
+                                        WORK.ADSL_NEW  Char      78  Race                                                           
+                              ETHNIC    WORK.ADSL_REF  Char      22  Ethnicity                                                      
+                                        WORK.ADSL_NEW  Char      25  Ethnicity                                                      
+                              RFSTDTC   WORK.ADSL_REF  Char      20  Subject Reference Start Date/Time                              
+                                        WORK.ADSL_NEW  Char      10  Subject Reference Start Date/Time                              
+                              RFENDTC   WORK.ADSL_REF  Char      20  Subject Reference End Date/Time                                
+                                        WORK.ADSL_NEW  Char      10  Subject Reference End Date/Time                                
+</pre>
+</article>
+<article id="IDX2" aria-label="Summary">
+<h1 class="contentitem toc">Summary</h1>
+<pre class="batch" style="border-spacing: 1px">
+                                                                                                                                    
+                                                                                                                                    
+                                                        Observation Summary                                                         
+                                                                                                                                    
+                                           Observation      Base  Compare  ID                                                       
+                                                                                                                                    
+                                           First Obs           1        1  USUBJID=01-701-1015                                      
+                                           First Unequal      42       42  USUBJID=01-702-1082                                      
+                                           Last  Unequal      42       42  USUBJID=01-702-1082                                      
+                                           Last  Obs         254      254  USUBJID=01-718-1427                                      
+                                                                                                                                    
+                                  Number of Observations in Common: 254.                                                            
+                                  Total Number of Observations Read from WORK.ADSL_REF: 254.                                        
+                                  Total Number of Observations Read from WORK.ADSL_NEW: 254.                                        
+                                                                                                                                    
+                                  Number of Observations with Some Compared Variables Unequal: 1.                                   
+                                  Number of Observations with All Compared Variables Equal: 253.                                    
+</pre>
+<hr class="pagebreak"/>
+<div id="IDX3" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">ADSL QC: derived ADAM.ADSL (compare) vs PHUSE reference ADSL (base)</span> </p>
+</div>
+<pre class="batch" style="border-spacing: 1px">
+                                                       The COMPARE Procedure                                                        
+                                           Comparison of WORK.ADSL_REF with WORK.ADSL_NEW                                           
+                                               (Method=ABSOLUTE, Criterion=0.000001)                                                
+                                                                                                                                    
+                                                     Values Comparison Summary                                                      
+                                                                                                                                    
+                                  Number of Variables Compared with All Observations Equal: 46.                                     
+                                  Number of Variables Compared with Some Observations Unequal: 1.                                   
+                                  Number of Variables with Missing Value Differences: 1.                                            
+                                  Total Number of Values which Compare Unequal: 1.                                                  
+                                  Maximum Difference: 0.                                                                            
+                                                                                                                                    
+                                                                                                                                    
+                                                   Variables with Unequal Values                                                    
+                                                                                                                                    
+                         Variable  Type  Len1 Len2   Label                        Ndif   MaxDif  MissDif                            
+                                                                                                                                    
+                         BMIBLGR1  CHAR     6    6   Pooled Baseline BMI Group 1     1                 1                            
+                                                                                                                                    
+</pre>
+</article>
+<article id="IDX4" aria-label="Differences">
+<h1 class="contentitem toc">Differences</h1>
+<pre class="batch" style="border-spacing: 1px">
+                                                                                                                                    
+                                                                                                                                    
+                                               Value Comparison Results for Variables                                               
+                                                                                                                                    
+                                   _____________________________________________________________                                    
+                                                 ||  Pooled Baseline BMI Group 1                                                    
+                                                 ||  Base Value           Compare Value                                             
+                                    USUBJID      ||  BMIBLGR1              bmiblgr1                                                 
+                                    ___________  ||  ______                ______                                                   
+                                                 ||                                                                                 
+                                    01-702-1082  ||  &lt;25                                                                            
+                                   _____________________________________________________________                                    
+</pre>
+</article>
+</section>
+</div>
+</body>
+</html>
