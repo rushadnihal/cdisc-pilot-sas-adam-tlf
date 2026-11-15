@@ -18,7 +18,7 @@ Notes   : Columns are the planned treatment arms plus a total. Percentages use t
           contain the same 254 randomized subjects in this study.
 *******************************************************************************/
 
-%let root = /home/u64094222/cdisc_pilot;
+%let root = /home/YOUR_USER_ID/cdisc_pilot;
 libname adam "&root/data/adam" access=readonly;
 
 options nodate nonumber orientation=landscape;

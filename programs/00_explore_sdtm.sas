@@ -9,7 +9,7 @@ Author  : rushadnihal
 Date    : 2026-11-15
 *******************************************************************************/
 
-%let root = /home/u64094222/cdisc_pilot;
+%let root = /home/YOUR_USER_ID/cdisc_pilot;
 libname sdtm "&root/data/sdtm" access=readonly;
 
 options nodate nonumber;

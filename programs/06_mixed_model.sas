@@ -35,7 +35,7 @@ Notes   : ADQSADAS is not derived in this project. The published PHUSE reference
               Kenward-Roger degrees of freedom and adjustment)
 *******************************************************************************/
 
-%let root = /home/u64094222/cdisc_pilot;
+%let root = /home/YOUR_USER_ID/cdisc_pilot;
 libname refx xport "&root/data/adam_ref/adqsadas.xpt" access=readonly;
 
 options nodate nonumber;

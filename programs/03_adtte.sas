@@ -11,7 +11,7 @@ Notes   : Event = first treatment-emergent dermatologic adverse event (ADAE
           discontinuation/completion (ADSL.RFENDT).
 *******************************************************************************/
 
-%let root = /home/u64094222/cdisc_pilot;
+%let root = /home/YOUR_USER_ID/cdisc_pilot;
 libname adam "&root/data/adam";
 
 options nodate nonumber;

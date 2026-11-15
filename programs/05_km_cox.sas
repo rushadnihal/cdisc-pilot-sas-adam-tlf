@@ -22,7 +22,7 @@ Notes   : Event = CNSR 0 (first treatment-emergent dermatologic AE), censored =
             Cox HR vs Placebo: Low about 4.15, High about 5.03
 *******************************************************************************/
 
-%let root = /home/u64094222/cdisc_pilot;
+%let root = /home/YOUR_USER_ID/cdisc_pilot;
 libname adam "&root/data/adam" access=readonly;
 
 options nodate nonumber;

@@ -12,7 +12,7 @@ Notes   : Expected differences are listed in docs/adsl_spec.md (BMIBLGR1 for
           (reference stores 0 as 5.4E-79) compare as equal.
 *******************************************************************************/
 
-%let root = /home/u64094222/cdisc_pilot;
+%let root = /home/YOUR_USER_ID/cdisc_pilot;
 libname adam "&root/data/adam" access=readonly;
 libname refx xport "&root/data/adam_ref/adsl.xpt" access=readonly;
 

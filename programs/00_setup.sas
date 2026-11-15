@@ -9,7 +9,7 @@ Date    : 2026-11-15 (updated 2026-11-15: added MH and VS for ADSL baseline vari
 Notes   : The only hard-coded path in the project is the &root macro variable below.
 *******************************************************************************/
 
-%let root = /home/u64094222/cdisc_pilot;
+%let root = /home/YOUR_USER_ID/cdisc_pilot;
 
 libname sdtm "&root/data/sdtm";
 libname adam "&root/data/adam";
