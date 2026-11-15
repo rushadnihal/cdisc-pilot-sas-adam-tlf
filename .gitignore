@@ -9,3 +9,11 @@ Thumbs.db
 *.sas7bcat.lck
 *.sas7bdat.lck
 .sasstudio/
+
+# Large SDTM files not used in this project (download from phuse-org/phuse-scripts if needed)
+data/sdtm/lb.xpt
+data/sdtm/supplb.xpt
+data/sdtm/vs.xpt
+data/sdtm/cm.xpt
+data/sdtm/mh.xpt
+data/sdtm/blankcrf.pdf
