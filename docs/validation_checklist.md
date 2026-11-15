@@ -6,7 +6,7 @@ Complete one section per program after each run. Save the log in `logs/` with th
 
 | Program | Run date | Log saved | 0 errors | 0 unexplained warnings | No uninitialized variables | No unintended merge notes | Reviewed by |
 |---|---|---|---|---|---|---|---|
-| 00_setup.sas | | | | | | | |
+| 00_setup.sas | 2026-11-15 | Yes (logs/00_setup_log.html) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
 | 01_adsl.sas | | | | | | | |
 | 02_adae.sas | | | | | | | |
 | 03_adtte.sas | | | | | | | |
