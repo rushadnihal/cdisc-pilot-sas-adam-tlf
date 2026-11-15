@@ -96,3 +96,8 @@ Platform: SAS OnDemand for Academics (SAS Studio).
 - CDISC variable names are used (USUBJID, TRT01P, TRT01A, AVAL, CNSR, and so on).
 - The only hard-coded path is the macro variable `root`.
 - The log of every run is saved in `logs/`.
+
+## License and attribution
+- **Code and documents written for this project** (`programs/`, `docs/` specifications and checklist, this README): MIT, see `LICENSE`.
+- **Data** in `data/sdtm/` and `data/adam_ref/` come from the PHUSE `phuse-scripts` repository (MIT) and are used unchanged. Source links and the license text are in `THIRD_PARTY_NOTICES.md`.
+- **Redacted identifier:** the saved logs and Results output were produced in SAS OnDemand for Academics. The account user ID in file paths has been replaced with `YOUR_USER_ID`. Nothing else in the logs or results was changed.

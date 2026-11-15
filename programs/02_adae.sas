@@ -12,7 +12,7 @@ Notes   : Partial start dates of the form YYYY-MM are imputed to the first of th
           the start day was imputed.
 *******************************************************************************/
 
-%let root = /home/u64094222/cdisc_pilot;
+%let root = /home/YOUR_USER_ID/cdisc_pilot;
 libname sdtm "&root/data/sdtm" access=readonly;
 libname adam "&root/data/adam";
 

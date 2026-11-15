@@ -12,7 +12,7 @@ Notes   : Expected: EVNTDESC differs for the 152 event records because the
           reference's 5.4E-79 stored as zero for CNSR compares as equal.
 *******************************************************************************/
 
-%let root = /home/u64094222/cdisc_pilot;
+%let root = /home/YOUR_USER_ID/cdisc_pilot;
 libname adam "&root/data/adam" access=readonly;
 libname refx xport "&root/data/adam_ref/adtte.xpt" access=readonly;
 

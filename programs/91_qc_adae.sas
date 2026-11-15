@@ -11,7 +11,7 @@ Notes   : Records are matched on USUBJID and AESEQ. Numeric values are compared
           are expected (see docs/adae_spec.md).
 *******************************************************************************/
 
-%let root = /home/u64094222/cdisc_pilot;
+%let root = /home/YOUR_USER_ID/cdisc_pilot;
 libname adam "&root/data/adam" access=readonly;
 libname refx xport "&root/data/adam_ref/adae.xpt" access=readonly;
 

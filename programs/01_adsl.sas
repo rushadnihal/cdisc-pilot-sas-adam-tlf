@@ -11,7 +11,7 @@ Notes   : Population = randomized subjects (ARMCD ne 'Scrnfail'); screen
           subject (TRT01A = TRT01P), as in the PHUSE reference ADSL.
 *******************************************************************************/
 
-%let root = /home/u64094222/cdisc_pilot;
+%let root = /home/YOUR_USER_ID/cdisc_pilot;
 libname sdtm "&root/data/sdtm" access=readonly;
 libname adam "&root/data/adam";
 
