@@ -7,6 +7,7 @@ Complete one section per program after each run. Save the log in `logs/` with th
 | Program | Run date | Log saved | 0 errors | 0 unexplained warnings | No uninitialized variables | No unintended merge notes | Reviewed by |
 |---|---|---|---|---|---|---|---|
 | 00_setup.sas | 2026-11-15 | Yes (logs/00_setup_log.html) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
+| 00_explore_sdtm.sas | 2026-11-15 | Yes (logs/00_explore_sdtm_log_run1.html) | No: 1 | Yes | Yes | Yes | rushadnihal / Claude |
 | 01_adsl.sas | | | | | | | |
 | 02_adae.sas | | | | | | | |
 | 03_adtte.sas | | | | | | | |
@@ -39,3 +40,7 @@ Complete one section per program after each run. Save the log in `logs/` with th
 ## Sign-off
 - Completed by:
 - Date:
+
+## Notes
+
+- **00_explore_sdtm.sas, run 1:** 1 error and 2 empty results. (1) PROC PRINT of SDTM.TS stopped with "Invalid characters were present in the data" (non-ASCII character in TSVAL); TS is not used downstream, so the print was removed. (2) The ADAS-Cog sections selected 0 rows because the QS category is "ALZHEIMER'S DISEASE ASSESSMENT SCALE", not a value containing "ADAS"; the filter was corrected. Re-run pending; the run 1 log is kept for the record.

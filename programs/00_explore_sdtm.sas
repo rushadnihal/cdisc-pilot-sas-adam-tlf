@@ -100,15 +100,15 @@ proc freq data=sdtm.qs;
   tables qscat*qsscat / list missing;
 run;
 
-title "QS: ADAS-Cog tests (categories containing ADAS)";
+title "QS: ADAS-Cog tests (category ALZHEIMER'S DISEASE ASSESSMENT SCALE)";
 proc freq data=sdtm.qs;
-  where upcase(qscat) contains 'ADAS';
+  where upcase(qscat) contains 'ALZHEIMER';
   tables qstestcd*qstest / list missing;
 run;
 
 title "QS: ADAS-Cog visits and baseline flag";
 proc freq data=sdtm.qs;
-  where upcase(qscat) contains 'ADAS';
+  where upcase(qscat) contains 'ALZHEIMER';
   tables visitnum*visit*qsblfl / list missing;
 run;
 
@@ -123,9 +123,6 @@ proc print data=sdtm.ta noobs; run;
 
 title "TE: trial elements";
 proc print data=sdtm.te noobs; run;
-
-title "TS: trial summary";
-proc print data=sdtm.ts noobs; run;
 
 /* ---- Date completeness (ISO 8601 character dates) ------------------------ */
 title "Date completeness: missing, partial (<10 chars), with time (>10 chars)";
