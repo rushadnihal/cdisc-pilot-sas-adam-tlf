@@ -50,8 +50,8 @@ Complete one section per program after each run. Save the log in `logs/` with th
 | Figure 2 (LS means by visit) | Yes: all nine points and intervals plotted, values equal the Table 12 LS means | Yes | Run 3 fixed clipped points at Week 8 and Week 24 |
 
 ## Sign-off
-- Completed by:
-- Date:
+- Completed by: Rushad Nihal
+- Date: 15/11/2026
 
 ## Notes
 
