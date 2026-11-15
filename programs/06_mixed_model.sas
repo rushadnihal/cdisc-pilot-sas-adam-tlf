@@ -176,7 +176,7 @@ footnote2 "Subjects with at least one observed post-baseline score are included.
 
 ods select ModelInfo ConvergenceStatus CovParms Tests3;
 ods output LSMeans=work.mm_lsm Diffs=work.mm_diff;
-proc mixed data=work.obs method=reml;
+proc mixed data=work.obs method=reml order=internal;
   class usubjid trtn visn sitegr1;
   model chg = base trtn visn trtn*visn sitegr1 base*visn / ddfm=kr;
   repeated visn / subject=usubjid type=un;
@@ -201,6 +201,10 @@ run;
 
 proc sort data=work.mm_diff2;
   by visn comparison;
+run;
+
+proc sort data=work.mm_lsm;
+  by trtn visn;
 run;
 
 title2 "ADAS-Cog(11) - Least Squares Mean Change from Baseline by Visit";
@@ -230,13 +234,14 @@ footnote1 "Repeated measures model, observed scores. Bars are 95% confidence int
 footnote2 "Source: 06_mixed_model.sas";
 
 proc sgplot data=work.mm_plot;
-  scatter x=xpos y=estimate / group=trtn yerrorlower=lower yerrorupper=upper
-          markerattrs=(symbol=circlefilled size=8);
-  series x=xpos y=estimate / group=trtn;
+  highlow x=xpos low=lower high=upper / group=trtn lowcap=serif highcap=serif;
+  series x=xpos y=estimate / group=trtn markers markerattrs=(symbol=circlefilled size=8)
+         name='lsm';
   refline 0 / axis=y lineattrs=(pattern=dash);
-  xaxis values=(8 16 24) valuesdisplay=('Week 8' 'Week 16' 'Week 24') label='Visit';
+  xaxis values=(8 16 24) valuesdisplay=('Week 8' 'Week 16' 'Week 24')
+        min=6 max=26 label='Visit';
   yaxis label='LS mean change from baseline (95% CI)';
-  keylegend / title='Treatment arm';
+  keylegend 'lsm' / title='Treatment arm';
 run;
 
 ods rtf close;
