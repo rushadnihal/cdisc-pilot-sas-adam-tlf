@@ -16,7 +16,7 @@ Complete one section per program after each run. Save the log in `logs/` with th
 | 92_qc_adtte.sas | 2026-11-15 | Yes (logs/92_qc_adtte_log.html, run 2) | Yes | Yes | Yes | Yes | rushadnihal / Claude | |
 | 04_tables.sas | 2026-11-15 | Yes (logs/04_tables_log.html, run 3) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
 | 05_km_cox.sas | 2026-11-15 | Yes (logs/05_km_cox_log.html, run 3) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
-| 06_mixed_model.sas | | | | | | | |
+| 06_mixed_model.sas | 2026-11-15 | Yes (logs/06_mixed_model_log.html, run 3) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
 
 ## Dataset checks
 
@@ -44,6 +44,10 @@ Complete one section per program after each run. Save the log in `logs/` with th
 | Table 4 (exposure) | Yes: duration, cumulative dose, average daily dose match ADSL | Yes | Dose is as planned (not measured) |
 | Table 5 (TEAE overview) | Yes: any TEAE 65/77/76, related 43/72/70, severe 5/16/8, serious 0/1/2, fatal 2/1/0, dermatologic 29/62/61 | Yes | Dermatologic counts also equal the ADTTE event counts (cross-check in the log output) |
 | Table 6 (TEAE by body system and term) | Partly: body-system totals for the top 4 systems and the preferred-term counts for the top system recomputed from ADAE | Yes | Ties in preferred-term counts are sorted alphabetically |
+| Table 10 (ANCOVA, Week 24 LOCF) | Yes: re-derived in Python (n 79/81/74; LS means 2.47/2.01/1.47; differences -0.47, -1.01, -0.54; treatment F p 0.4896) | Yes | Input is the PHUSE reference ADQSADAS (not derived here), so this checks the model code only |
+| Table 11 (dose response) | Yes: dose term -0.9552 (p 0.2447), matches the independent calculation | Yes | Dose scaled to 81 mg, so the estimate is the placebo-to-high-dose change |
+| Table 12 (MMRM, Weeks 8/16/24) | Yes: 539 records from 234 subjects; covariance and Week 24 LS means (2.33/1.74/1.50) and differences match the prototype; SAS standard errors differ slightly because of Kenward-Roger | Yes | Visits and arms in numeric order (order=internal and numeric sort) |
+| Figure 2 (LS means by visit) | Yes: all nine points and intervals plotted, values equal the Table 12 LS means | Yes | Run 3 fixed clipped points at Week 8 and Week 24 |
 
 ## Sign-off
 - Completed by:
@@ -60,3 +64,5 @@ Complete one section per program after each run. Save the log in `logs/` with th
 - **04_tables.sas, runs 1 to 3:** runs 1 and 2 had errors caused by an incomplete copy of the program in the editor (the paste stopped partway through the Table 1 section, and a leftover half line then broke the `%flagrow` call), not by program logic. Run 3, using the uploaded complete file, had 0 errors and 0 warnings but the log showed five "variable is uninitialized" notes from `%init`, and Table 2 rows were out of order (PROC REPORT sorts an ORDER variable by formatted value by default). Both were fixed (`call missing` in `%init`, `order=internal` in `%rpt`) and the program was re-run. The saved log, results and RTF are from that last run: 0 errors, 0 warnings, no uninitialized variables, no merge notes. The only unusual notes are 7 Cartesian product notes from the intended zero-fill cross join in `%catrows`. Earlier run logs were not kept.
 
 - **05_km_cox.sas, runs 1 to 3:** run 1 was clean (0 errors, 0 warnings) and all numbers matched the independent calculation, but the strata sorted alphabetically (Placebo, High, Low) and the hazard ratio table showed ratios as Placebo versus xanomeline. Run 2 fixed both (dose-ordered labels, `diff=ref`) and added a contrast for high vs low dose, but the copy that was run had the contrast coefficients in the wrong order, so the line labelled "High dose vs low dose" showed 0.825 (the inverse). Run 3, with the coefficients corrected, shows 1.2118 (0.8496 to 1.7283), matching the independent calculation. The saved log, results, RTF and PNG files are from run 3. Earlier run logs were not kept. The two proportional hazards plots were saved as `05_km_ph_low_dose.png` and `05_km_ph_high_dose.png` (SAS named them `05_km_dermatologic1.png` and `05_km_dermatologic2.png`).
+
+- **06_mixed_model.sas, runs 1 to 3:** run 1 was clean (0 errors, 0 warnings) and the statistics matched the independent calculation, but the visits sorted alphabetically by label (Week 16, Week 24, Week 8) in the MMRM output and two points in Figure 2 were clipped. Run 2 fixed the ordering (`order=internal`, numeric sort) but the figure was still clipped because `values=` on the x axis overrides the min/max settings. Run 3 includes padding values in `values=` and `reset=index`: 0 errors, 0 warnings, all nine points visible, and the PNG keeps its plain name. The only unusual notes are "format already on the library" for TRTF and VISF, which come from reusing the format names in the same session. The saved log, results, RTF and PNG are from run 3. Earlier run logs were not kept. ADQSADAS is the PHUSE reference dataset, not derived in this project.
