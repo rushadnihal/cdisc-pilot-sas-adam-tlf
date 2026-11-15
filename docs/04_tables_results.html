@@ -1,0 +1,3829 @@
+<!DOCTYPE html>
+<html class="ods_a6e2dd35-8204-44d3-8183-97abd3c5e222" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="SAS 9.4" name="generator"/>
+<title>Results: 04_tables.sas</title>
+<style>
+/*<![CDATA[*/
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.c section > table, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.c section > pre, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.c div > table,
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.c div > pre, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.c article > table, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.c article > pre,
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.j section > table, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.j section > pre, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.j div > table,
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.j div > pre, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.j article > table, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.j article > pre,
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.c p.note, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.c p.warning, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.c p.error, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.c p.fatal,
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.j p.note, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.j p.warning, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.j p.error, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.j p.fatal,
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.c > table.layoutcontainer, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.l table, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.l pre, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.l p.note,
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.l p.warning, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.l p.error, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.l p.fatal { margin-left: 0 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.c table, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.c pre, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.c p.note,
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.c p.warning, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.c p.error, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.r table, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.r pre, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.r p.note,
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.r table, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.r pre, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.r p.note,
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.r p.warning, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.r p.error, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion.r p.fatal { margin-right: 0 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 article, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 aside, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 details, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 figcaption, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 figure, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 footer, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 header, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 hgroup, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 nav, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 section { display: block }
+html.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 { font-size: 100% }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body { margin: 1em; font-size: 13px; line-height: 1.231 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 ul, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 ol { margin: 1em 0; padding: 0 0 0 40px }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 dd { margin: 0 0 0 40px }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 nav ul, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 img { border: 0; vertical-align: middle }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 svg:not(:root) { overflow: hidden }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 figure { margin: 0 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 table { border-collapse: collapse; border-spacing: 0 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutcontainer { border-collapse: separate; border-spacing: 0 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 p { margin-top: 0; text-align: left }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 h1.heading1 { text-align: left }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 h2.heading2 { text-align: left }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 h3.heading3 { text-align: left }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 h4.heading4 { text-align: left }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 h5.heading5 { text-align: left }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 h6.heading6 { text-align: left }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 span { text-align: left }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 table { margin-bottom: 1em }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 td, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 th { text-align: left; padding: 3px 6px; vertical-align: top }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 td[class$="fixed"], .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 th[class$="fixed"] { white-space: pre }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 section, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 article { padding-top: 1px; padding-bottom: 8px }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .stacked-value { text-align: left; display: block }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .stacked-cell > .stacked-value, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 td.data > td.data, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 th.data > td.data, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 th.data > th.data, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 td.data > th.data, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 th.header > th.header { border: 0 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .stacked-cell > div.data { border-width: 0 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systitleandfootercontainer > p { margin: 0 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .batch { display: table }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .toc { display: none }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .proc_note_group, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .proc_title_group { margin-bottom: 1em }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 p.proctitle { margin: 0 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 p.note, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 p.warning, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 p.error, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 p.fatal { display: table }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .notebanner, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .warnbanner, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .errorbanner, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .fatalbanner,
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .notecontent, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .warncontent, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .errorcontent, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .fatalcontent { display: table-cell; padding: 0.5em }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .notebanner, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .warnbanner, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .errorbanner, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .fatalbanner { padding-right: 0 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body > div > ol li { text-align: left }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .c { text-align: center }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .r { text-align: right }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .l { text-align: left }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .j { text-align: justify }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .d { text-align: right }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .b { vertical-align: bottom }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .m { vertical-align: middle }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .t { vertical-align: top }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .accessiblecaption {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 a:active { color: #800080 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .batch > tbody, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .batch > thead, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .batch { border: hidden; }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .bylinecontainer > col, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .bylinecontainer > colgroup > col, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .bylinecontainer > colgroup, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .bylinecontainer > tr, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .bylinecontainer > * > tr, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .bylinecontainer > thead, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .bylinecontainer > tbody, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .bylinecontainer > tfoot { border: none; }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .cell, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .contentfolder, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .contentproclabel, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .data, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .graph > tbody, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .graph > thead, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .graph { border: hidden; }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .heading1, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .heading2, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .heading3, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .heading4, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .heading5, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .heading6 { font-family: Arial, Helvetica, sans-serif }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .indexaction, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutcontainer, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 a:link { color: #0000ff }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .list3, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .list4, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .list5, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .list6, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .list7, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .list8, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .listitem3, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .listitem4, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .listitem5, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .listitem6, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .listitem7, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .listitem8, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .output > tbody, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .output > thead, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .output { border: hidden; }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .pagesproclabel, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .parskip > col, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .parskip > colgroup > col, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .parskip > colgroup, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .parskip > tr, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .parskip > * > tr, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .parskip > thead, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .parskip > tbody, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .parskip > tfoot { border: none; }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemfooter, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemfooter10, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemfooter2, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemfooter3, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemfooter4, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemfooter5, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemfooter6, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemfooter7, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemfooter8, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemtitle, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemtitle10, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemtitle2, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemtitle3, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemtitle4, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemtitle5, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemtitle6, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemtitle7, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemtitle8, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systitleandfootercontainer > col, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systitleandfootercontainer > colgroup > col, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systitleandfootercontainer > colgroup, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systitleandfootercontainer > tr, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systitleandfootercontainer > * > tr, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systitleandfootercontainer > thead, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systitleandfootercontainer > tbody, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systitleandfootercontainer > tfoot { border: none; }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .table > col, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .table > tr, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .table { border: hidden; }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .titleandnotecontainer > col, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .titleandnotecontainer > colgroup > col, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .titleandnotecontainer > colgroup, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .titleandnotecontainer > tr, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .titleandnotecontainer > * > tr, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .titleandnotecontainer > thead, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .titleandnotecontainer > tbody, .ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .titleandnotecontainer > tfoot { border: none; }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 a:visited { color: #800080 }
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a6e2dd35-8204-44d3-8183-97abd3c5e222 .warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+</head>
+<body class="body">
+<div id="div_a6e2dd35-8204-44d3-8183-97abd3c5e222" class="c body">
+<h1 class="body toc">Results: 04_tables.sas</h1>
+<section data-name="Report" data-sec-type="proc">
+<div id="IDX" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Table 1</span> </p>
+<p><span class="c systemtitle2">Analysis Populations</span> </p>
+</div>
+<h1 class="contentprocname toc">The Report Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Detailed and/or summarized report</h1>
+<article aria-label="Table 1">
+<h1 class="contentitem toc">Table 1</h1>
+<table class="table" style="border-spacing: 0" aria-label="Detailed and/or summarized report">
+<caption aria-label="Detailed and/or summarized report"></caption>
+<colgroup><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c header" scope="col">&#160;</th>
+<th class="c header" scope="col">Placebo<br/>(N=86)</th>
+<th class="c header" scope="col">Xanomeline<br/>Low Dose<br/>(N=84)</th>
+<th class="c header" scope="col">Xanomeline<br/>High Dose<br/>(N=84)</th>
+<th class="c header" scope="col">Total<br/>(N=254)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Intent-to-treat&#160;population</td>
+<td class="c data" style="width: 1.2in">86 (100.0%)</td>
+<td class="c data" style="width: 1.2in">84 (100.0%)</td>
+<td class="c data" style="width: 1.2in">84 (100.0%)</td>
+<td class="c data" style="width: 1.2in">254 (100.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Safety&#160;population</td>
+<td class="c data" style="width: 1.2in">86 (100.0%)</td>
+<td class="c data" style="width: 1.2in">84 (100.0%)</td>
+<td class="c data" style="width: 1.2in">84 (100.0%)</td>
+<td class="c data" style="width: 1.2in">254 (100.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Efficacy&#160;population</td>
+<td class="c data" style="width: 1.2in">79 (91.9%)</td>
+<td class="c data" style="width: 1.2in">81 (96.4%)</td>
+<td class="c data" style="width: 1.2in">74 (88.1%)</td>
+<td class="c data" style="width: 1.2in">234 (92.1%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Completers&#160;of&#160;Week&#160;8</td>
+<td class="c data" style="width: 1.2in">74 (86.0%)</td>
+<td class="c data" style="width: 1.2in">60 (71.4%)</td>
+<td class="c data" style="width: 1.2in">56 (66.7%)</td>
+<td class="c data" style="width: 1.2in">190 (74.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Completers&#160;of&#160;Week&#160;16</td>
+<td class="c data" style="width: 1.2in">68 (79.1%)</td>
+<td class="c data" style="width: 1.2in">42 (50.0%)</td>
+<td class="c data" style="width: 1.2in">37 (44.0%)</td>
+<td class="c data" style="width: 1.2in">147 (57.9%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Completers&#160;of&#160;Week&#160;24</td>
+<td class="c data" style="width: 1.2in">60 (69.8%)</td>
+<td class="c data" style="width: 1.2in">28 (33.3%)</td>
+<td class="c data" style="width: 1.2in">30 (35.7%)</td>
+<td class="c data" style="width: 1.2in">118 (46.5%)</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<div class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemfooter">N is the number of randomized subjects in the column. Completers are subjects who reached the Week 8 or 16 or 24 visit.</span> </p>
+<p><span class="c systemfooter2">Source: 04_tables.sas</span> </p>
+</div>
+</section>
+<section data-name="Report" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX1" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Table 2</span> </p>
+<p><span class="c systemtitle2">Baseline Demographics and Characteristics - Intent-to-Treat Population</span> </p>
+</div>
+<h1 class="contentprocname toc">The Report Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Detailed and/or summarized report</h1>
+<article aria-label="Table 1">
+<h1 class="contentitem toc">Table 1</h1>
+<table class="table" style="border-spacing: 0" aria-label="Detailed and/or summarized report">
+<caption aria-label="Detailed and/or summarized report"></caption>
+<colgroup><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c header" scope="col">&#160;</th>
+<th class="c header" scope="col">Placebo<br/>(N=86)</th>
+<th class="c header" scope="col">Xanomeline<br/>Low Dose<br/>(N=84)</th>
+<th class="c header" scope="col">Xanomeline<br/>High Dose<br/>(N=84)</th>
+<th class="c header" scope="col">Total<br/>(N=254)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Age&#160;(years)</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;n</td>
+<td class="c data" style="width: 1.2in">86</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">254</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Mean&#160;(SD)</td>
+<td class="c data" style="width: 1.2in">75.2 (8.59)</td>
+<td class="c data" style="width: 1.2in">75.7 (8.29)</td>
+<td class="c data" style="width: 1.2in">74.4 (7.89)</td>
+<td class="c data" style="width: 1.2in">75.1 (8.25)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Median</td>
+<td class="c data" style="width: 1.2in">76.0</td>
+<td class="c data" style="width: 1.2in">77.5</td>
+<td class="c data" style="width: 1.2in">76.0</td>
+<td class="c data" style="width: 1.2in">77.0</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Min,&#160;Max</td>
+<td class="c data" style="width: 1.2in">52.0, 89.0</td>
+<td class="c data" style="width: 1.2in">51.0, 88.0</td>
+<td class="c data" style="width: 1.2in">56.0, 88.0</td>
+<td class="c data" style="width: 1.2in">51.0, 89.0</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Age&#160;group</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;&lt;65</td>
+<td class="c data" style="width: 1.2in">14 (16.3%)</td>
+<td class="c data" style="width: 1.2in">8 (9.5%)</td>
+<td class="c data" style="width: 1.2in">11 (13.1%)</td>
+<td class="c data" style="width: 1.2in">33 (13.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;65-80</td>
+<td class="c data" style="width: 1.2in">42 (48.8%)</td>
+<td class="c data" style="width: 1.2in">47 (56.0%)</td>
+<td class="c data" style="width: 1.2in">55 (65.5%)</td>
+<td class="c data" style="width: 1.2in">144 (56.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;&gt;80</td>
+<td class="c data" style="width: 1.2in">30 (34.9%)</td>
+<td class="c data" style="width: 1.2in">29 (34.5%)</td>
+<td class="c data" style="width: 1.2in">18 (21.4%)</td>
+<td class="c data" style="width: 1.2in">77 (30.3%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Sex</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Female</td>
+<td class="c data" style="width: 1.2in">53 (61.6%)</td>
+<td class="c data" style="width: 1.2in">50 (59.5%)</td>
+<td class="c data" style="width: 1.2in">40 (47.6%)</td>
+<td class="c data" style="width: 1.2in">143 (56.3%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Male</td>
+<td class="c data" style="width: 1.2in">33 (38.4%)</td>
+<td class="c data" style="width: 1.2in">34 (40.5%)</td>
+<td class="c data" style="width: 1.2in">44 (52.4%)</td>
+<td class="c data" style="width: 1.2in">111 (43.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Race</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;White</td>
+<td class="c data" style="width: 1.2in">78 (90.7%)</td>
+<td class="c data" style="width: 1.2in">78 (92.9%)</td>
+<td class="c data" style="width: 1.2in">74 (88.1%)</td>
+<td class="c data" style="width: 1.2in">230 (90.6%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Black&#160;or&#160;African&#160;American</td>
+<td class="c data" style="width: 1.2in">8 (9.3%)</td>
+<td class="c data" style="width: 1.2in">6 (7.1%)</td>
+<td class="c data" style="width: 1.2in">9 (10.7%)</td>
+<td class="c data" style="width: 1.2in">23 (9.1%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;American&#160;Indian&#160;or&#160;Alaska&#160;Native</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Ethnicity</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Hispanic&#160;or&#160;Latino</td>
+<td class="c data" style="width: 1.2in">3 (3.5%)</td>
+<td class="c data" style="width: 1.2in">6 (7.1%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">12 (4.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Not&#160;Hispanic&#160;or&#160;Latino</td>
+<td class="c data" style="width: 1.2in">83 (96.5%)</td>
+<td class="c data" style="width: 1.2in">78 (92.9%)</td>
+<td class="c data" style="width: 1.2in">81 (96.4%)</td>
+<td class="c data" style="width: 1.2in">242 (95.3%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Baseline&#160;height&#160;(cm)</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;n</td>
+<td class="c data" style="width: 1.2in">86</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">254</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Mean&#160;(SD)</td>
+<td class="c data" style="width: 1.2in">162.6 (11.52)</td>
+<td class="c data" style="width: 1.2in">163.4 (10.42)</td>
+<td class="c data" style="width: 1.2in">165.8 (10.13)</td>
+<td class="c data" style="width: 1.2in">163.9 (10.76)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Median</td>
+<td class="c data" style="width: 1.2in">162.6</td>
+<td class="c data" style="width: 1.2in">162.6</td>
+<td class="c data" style="width: 1.2in">165.1</td>
+<td class="c data" style="width: 1.2in">162.9</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Min,&#160;Max</td>
+<td class="c data" style="width: 1.2in">137.2, 185.4</td>
+<td class="c data" style="width: 1.2in">135.9, 195.6</td>
+<td class="c data" style="width: 1.2in">146.1, 190.5</td>
+<td class="c data" style="width: 1.2in">135.9, 195.6</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Baseline&#160;weight&#160;(kg)</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;n</td>
+<td class="c data" style="width: 1.2in">86</td>
+<td class="c data" style="width: 1.2in">83</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">253</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Mean&#160;(SD)</td>
+<td class="c data" style="width: 1.2in">62.8 (12.77)</td>
+<td class="c data" style="width: 1.2in">67.3 (14.12)</td>
+<td class="c data" style="width: 1.2in">70.0 (14.65)</td>
+<td class="c data" style="width: 1.2in">66.6 (14.13)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Median</td>
+<td class="c data" style="width: 1.2in">60.6</td>
+<td class="c data" style="width: 1.2in">64.9</td>
+<td class="c data" style="width: 1.2in">69.2</td>
+<td class="c data" style="width: 1.2in">66.7</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Min,&#160;Max</td>
+<td class="c data" style="width: 1.2in">34.0, 86.2</td>
+<td class="c data" style="width: 1.2in">45.4, 106.1</td>
+<td class="c data" style="width: 1.2in">41.7, 108.0</td>
+<td class="c data" style="width: 1.2in">34.0, 108.0</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Baseline&#160;BMI&#160;(kg/m^2)</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;n</td>
+<td class="c data" style="width: 1.2in">86</td>
+<td class="c data" style="width: 1.2in">83</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">253</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Mean&#160;(SD)</td>
+<td class="c data" style="width: 1.2in">23.6 (3.67)</td>
+<td class="c data" style="width: 1.2in">25.1 (4.27)</td>
+<td class="c data" style="width: 1.2in">25.3 (4.16)</td>
+<td class="c data" style="width: 1.2in">24.7 (4.09)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Median</td>
+<td class="c data" style="width: 1.2in">23.4</td>
+<td class="c data" style="width: 1.2in">24.3</td>
+<td class="c data" style="width: 1.2in">24.8</td>
+<td class="c data" style="width: 1.2in">24.2</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Min,&#160;Max</td>
+<td class="c data" style="width: 1.2in">15.1, 33.3</td>
+<td class="c data" style="width: 1.2in">17.7, 40.1</td>
+<td class="c data" style="width: 1.2in">13.7, 34.5</td>
+<td class="c data" style="width: 1.2in">13.7, 40.1</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Baseline&#160;BMI&#160;group&#160;(kg/m^2)</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;&lt;25</td>
+<td class="c data" style="width: 1.2in">59 (68.6%)</td>
+<td class="c data" style="width: 1.2in">46 (54.8%)</td>
+<td class="c data" style="width: 1.2in">44 (52.4%)</td>
+<td class="c data" style="width: 1.2in">149 (58.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;25&#160;to&#160;&lt;30</td>
+<td class="c data" style="width: 1.2in">21 (24.4%)</td>
+<td class="c data" style="width: 1.2in">27 (32.1%)</td>
+<td class="c data" style="width: 1.2in">28 (33.3%)</td>
+<td class="c data" style="width: 1.2in">76 (29.9%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;&gt;=30</td>
+<td class="c data" style="width: 1.2in">6 (7.0%)</td>
+<td class="c data" style="width: 1.2in">10 (11.9%)</td>
+<td class="c data" style="width: 1.2in">12 (14.3%)</td>
+<td class="c data" style="width: 1.2in">28 (11.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Missing</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Years&#160;of&#160;education</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;n</td>
+<td class="c data" style="width: 1.2in">86</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">254</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Mean&#160;(SD)</td>
+<td class="c data" style="width: 1.2in">12.6 (2.95)</td>
+<td class="c data" style="width: 1.2in">13.2 (4.15)</td>
+<td class="c data" style="width: 1.2in">12.5 (2.92)</td>
+<td class="c data" style="width: 1.2in">12.8 (3.38)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Median</td>
+<td class="c data" style="width: 1.2in">12.0</td>
+<td class="c data" style="width: 1.2in">12.0</td>
+<td class="c data" style="width: 1.2in">12.0</td>
+<td class="c data" style="width: 1.2in">12.0</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Min,&#160;Max</td>
+<td class="c data" style="width: 1.2in">6.0, 21.0</td>
+<td class="c data" style="width: 1.2in">3.0, 24.0</td>
+<td class="c data" style="width: 1.2in">6.0, 20.0</td>
+<td class="c data" style="width: 1.2in">3.0, 24.0</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Duration&#160;of&#160;disease&#160;(months)</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;n</td>
+<td class="c data" style="width: 1.2in">86</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">254</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Mean&#160;(SD)</td>
+<td class="c data" style="width: 1.2in">42.6 (30.24)</td>
+<td class="c data" style="width: 1.2in">48.7 (29.58)</td>
+<td class="c data" style="width: 1.2in">40.5 (24.69)</td>
+<td class="c data" style="width: 1.2in">43.9 (28.40)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Median</td>
+<td class="c data" style="width: 1.2in">35.3</td>
+<td class="c data" style="width: 1.2in">40.3</td>
+<td class="c data" style="width: 1.2in">36.0</td>
+<td class="c data" style="width: 1.2in">36.3</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Min,&#160;Max</td>
+<td class="c data" style="width: 1.2in">7.2, 183.1</td>
+<td class="c data" style="width: 1.2in">7.8, 130.8</td>
+<td class="c data" style="width: 1.2in">2.2, 135.0</td>
+<td class="c data" style="width: 1.2in">2.2, 183.1</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Duration&#160;of&#160;disease&#160;group</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;&lt;12&#160;months</td>
+<td class="c data" style="width: 1.2in">5 (5.8%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">4 (4.8%)</td>
+<td class="c data" style="width: 1.2in">12 (4.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;&gt;=12&#160;months</td>
+<td class="c data" style="width: 1.2in">81 (94.2%)</td>
+<td class="c data" style="width: 1.2in">81 (96.4%)</td>
+<td class="c data" style="width: 1.2in">80 (95.2%)</td>
+<td class="c data" style="width: 1.2in">242 (95.3%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">MMSE&#160;total&#160;score</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;n</td>
+<td class="c data" style="width: 1.2in">86</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">254</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Mean&#160;(SD)</td>
+<td class="c data" style="width: 1.2in">18.0 (4.27)</td>
+<td class="c data" style="width: 1.2in">17.9 (4.22)</td>
+<td class="c data" style="width: 1.2in">18.5 (4.16)</td>
+<td class="c data" style="width: 1.2in">18.1 (4.21)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Median</td>
+<td class="c data" style="width: 1.2in">19.5</td>
+<td class="c data" style="width: 1.2in">18.0</td>
+<td class="c data" style="width: 1.2in">20.0</td>
+<td class="c data" style="width: 1.2in">19.0</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Min,&#160;Max</td>
+<td class="c data" style="width: 1.2in">10.0, 23.0</td>
+<td class="c data" style="width: 1.2in">10.0, 24.0</td>
+<td class="c data" style="width: 1.2in">10.0, 24.0</td>
+<td class="c data" style="width: 1.2in">10.0, 24.0</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<div class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemfooter">Categorical rows show n and percent of the column N. BMI is body mass index. MMSE is the Mini-Mental State Examination.</span> </p>
+<p><span class="c systemfooter2">Source: 04_tables.sas</span> </p>
+</div>
+</section>
+<section data-name="Report" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX2" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Table 3</span> </p>
+<p><span class="c systemtitle2">Subject Disposition - Intent-to-Treat Population</span> </p>
+</div>
+<h1 class="contentprocname toc">The Report Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Detailed and/or summarized report</h1>
+<article aria-label="Table 1">
+<h1 class="contentitem toc">Table 1</h1>
+<table class="table" style="border-spacing: 0" aria-label="Detailed and/or summarized report">
+<caption aria-label="Detailed and/or summarized report"></caption>
+<colgroup><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c header" scope="col">&#160;</th>
+<th class="c header" scope="col">Placebo<br/>(N=86)</th>
+<th class="c header" scope="col">Xanomeline<br/>Low Dose<br/>(N=84)</th>
+<th class="c header" scope="col">Xanomeline<br/>High Dose<br/>(N=84)</th>
+<th class="c header" scope="col">Total<br/>(N=254)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Completed&#160;the&#160;study</td>
+<td class="c data" style="width: 1.2in">58 (67.4%)</td>
+<td class="c data" style="width: 1.2in">25 (29.8%)</td>
+<td class="c data" style="width: 1.2in">27 (32.1%)</td>
+<td class="c data" style="width: 1.2in">110 (43.3%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Discontinued&#160;early</td>
+<td class="c data" style="width: 1.2in">28 (32.6%)</td>
+<td class="c data" style="width: 1.2in">59 (70.2%)</td>
+<td class="c data" style="width: 1.2in">57 (67.9%)</td>
+<td class="c data" style="width: 1.2in">144 (56.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Reason&#160;for&#160;early&#160;discontinuation</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Adverse&#160;Event</td>
+<td class="c data" style="width: 1.2in">8 (9.3%)</td>
+<td class="c data" style="width: 1.2in">44 (52.4%)</td>
+<td class="c data" style="width: 1.2in">40 (47.6%)</td>
+<td class="c data" style="width: 1.2in">92 (36.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Death</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;I/E&#160;Not&#160;Met</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Lack&#160;of&#160;Efficacy</td>
+<td class="c data" style="width: 1.2in">3 (3.5%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">4 (1.6%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Lost&#160;to&#160;Follow-up</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Physician&#160;Decision</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Protocol&#160;Violation</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Sponsor&#160;Decision</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">7 (2.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Withdrew&#160;Consent</td>
+<td class="c data" style="width: 1.2in">9 (10.5%)</td>
+<td class="c data" style="width: 1.2in">10 (11.9%)</td>
+<td class="c data" style="width: 1.2in">8 (9.5%)</td>
+<td class="c data" style="width: 1.2in">27 (10.6%)</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<div class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemfooter">Rows show n and percent of the column N.</span> </p>
+<p><span class="c systemfooter2">Source: 04_tables.sas</span> </p>
+</div>
+</section>
+<section data-name="Report" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX3" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Table 4</span> </p>
+<p><span class="c systemtitle2">Treatment Exposure - Intent-to-Treat Population</span> </p>
+</div>
+<h1 class="contentprocname toc">The Report Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Detailed and/or summarized report</h1>
+<article aria-label="Table 1">
+<h1 class="contentitem toc">Table 1</h1>
+<table class="table" style="border-spacing: 0" aria-label="Detailed and/or summarized report">
+<caption aria-label="Detailed and/or summarized report"></caption>
+<colgroup><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c header" scope="col">&#160;</th>
+<th class="c header" scope="col">Placebo<br/>(N=86)</th>
+<th class="c header" scope="col">Xanomeline<br/>Low Dose<br/>(N=84)</th>
+<th class="c header" scope="col">Xanomeline<br/>High Dose<br/>(N=84)</th>
+<th class="c header" scope="col">Total<br/>(N=254)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Duration&#160;of&#160;treatment&#160;(days)</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;n</td>
+<td class="c data" style="width: 1.2in">86</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">254</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Mean&#160;(SD)</td>
+<td class="c data" style="width: 1.2in">149.1 (60.30)</td>
+<td class="c data" style="width: 1.2in">99.0 (68.15)</td>
+<td class="c data" style="width: 1.2in">99.4 (70.64)</td>
+<td class="c data" style="width: 1.2in">116.1 (70.30)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Median</td>
+<td class="c data" style="width: 1.2in">182.0</td>
+<td class="c data" style="width: 1.2in">82.5</td>
+<td class="c data" style="width: 1.2in">76.5</td>
+<td class="c data" style="width: 1.2in">133.5</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Min,&#160;Max</td>
+<td class="c data" style="width: 1.2in">7.0, 210.0</td>
+<td class="c data" style="width: 1.2in">2.0, 212.0</td>
+<td class="c data" style="width: 1.2in">1.0, 200.0</td>
+<td class="c data" style="width: 1.2in">1.0, 212.0</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Cumulative&#160;dose&#160;as&#160;planned&#160;(mg)</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;n</td>
+<td class="c data" style="width: 1.2in">86</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">254</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Mean&#160;(SD)</td>
+<td class="c data" style="width: 1.2in">0 (0.0)</td>
+<td class="c data" style="width: 1.2in">5347 (3680.4)</td>
+<td class="c data" style="width: 1.2in">7551 (5531.0)</td>
+<td class="c data" style="width: 1.2in">4266 (4963.6)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Median</td>
+<td class="c data" style="width: 1.2in">0</td>
+<td class="c data" style="width: 1.2in">4455</td>
+<td class="c data" style="width: 1.2in">5778</td>
+<td class="c data" style="width: 1.2in">2322</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Min,&#160;Max</td>
+<td class="c data" style="width: 1.2in">0, 0</td>
+<td class="c data" style="width: 1.2in">108, 11448</td>
+<td class="c data" style="width: 1.2in">54, 15417</td>
+<td class="c data" style="width: 1.2in">0, 15417</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Average&#160;daily&#160;dose&#160;as&#160;planned&#160;(mg/day)</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+<td class="c data" style="width: 1.2in">&#160;</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;n</td>
+<td class="c data" style="width: 1.2in">86</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">84</td>
+<td class="c data" style="width: 1.2in">254</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Mean&#160;(SD)</td>
+<td class="c data" style="width: 1.2in">0.0 (0.00)</td>
+<td class="c data" style="width: 1.2in">54.0 (0.00)</td>
+<td class="c data" style="width: 1.2in">71.6 (8.11)</td>
+<td class="c data" style="width: 1.2in">41.5 (30.98)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Median</td>
+<td class="c data" style="width: 1.2in">0.0</td>
+<td class="c data" style="width: 1.2in">54.0</td>
+<td class="c data" style="width: 1.2in">75.1</td>
+<td class="c data" style="width: 1.2in">54.0</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;Min,&#160;Max</td>
+<td class="c data" style="width: 1.2in">0.0, 0.0</td>
+<td class="c data" style="width: 1.2in">54.0, 54.0</td>
+<td class="c data" style="width: 1.2in">54.0, 78.6</td>
+<td class="c data" style="width: 1.2in">0.0, 78.6</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<div class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemfooter">Duration is last dose date minus first dose date plus 1. Dose is as planned for the assigned treatment arm.</span> </p>
+<p><span class="c systemfooter2">Source: 04_tables.sas</span> </p>
+</div>
+</section>
+<section data-name="Report" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX4" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Table 5</span> </p>
+<p><span class="c systemtitle2">Overview of Treatment-Emergent Adverse Events - Safety Population</span> </p>
+</div>
+<h1 class="contentprocname toc">The Report Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Detailed and/or summarized report</h1>
+<article aria-label="Table 1">
+<h1 class="contentitem toc">Table 1</h1>
+<table class="table" style="border-spacing: 0" aria-label="Detailed and/or summarized report">
+<caption aria-label="Detailed and/or summarized report"></caption>
+<colgroup><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c header" scope="col">&#160;</th>
+<th class="c header" scope="col">Placebo<br/>(N=86)</th>
+<th class="c header" scope="col">Xanomeline<br/>Low Dose<br/>(N=84)</th>
+<th class="c header" scope="col">Xanomeline<br/>High Dose<br/>(N=84)</th>
+<th class="c header" scope="col">Total<br/>(N=254)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Any&#160;treatment-emergent&#160;AE</td>
+<td class="c data" style="width: 1.2in">65 (75.6%)</td>
+<td class="c data" style="width: 1.2in">77 (91.7%)</td>
+<td class="c data" style="width: 1.2in">76 (90.5%)</td>
+<td class="c data" style="width: 1.2in">218 (85.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Any&#160;AE&#160;possibly&#160;or&#160;probably&#160;related</td>
+<td class="c data" style="width: 1.2in">43 (50.0%)</td>
+<td class="c data" style="width: 1.2in">72 (85.7%)</td>
+<td class="c data" style="width: 1.2in">70 (83.3%)</td>
+<td class="c data" style="width: 1.2in">185 (72.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Any&#160;severe&#160;AE</td>
+<td class="c data" style="width: 1.2in">5 (5.8%)</td>
+<td class="c data" style="width: 1.2in">16 (19.0%)</td>
+<td class="c data" style="width: 1.2in">8 (9.5%)</td>
+<td class="c data" style="width: 1.2in">29 (11.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Any&#160;serious&#160;AE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Any&#160;AE&#160;with&#160;fatal&#160;outcome</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Any&#160;dermatologic&#160;AE</td>
+<td class="c data" style="width: 1.2in">29 (33.7%)</td>
+<td class="c data" style="width: 1.2in">62 (73.8%)</td>
+<td class="c data" style="width: 1.2in">61 (72.6%)</td>
+<td class="c data" style="width: 1.2in">152 (59.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">Discontinued&#160;the&#160;study&#160;due&#160;to&#160;an&#160;AE</td>
+<td class="c data" style="width: 1.2in">8 (9.3%)</td>
+<td class="c data" style="width: 1.2in">44 (52.4%)</td>
+<td class="c data" style="width: 1.2in">40 (47.6%)</td>
+<td class="c data" style="width: 1.2in">92 (36.2%)</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<div class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemfooter">Subjects are counted once per row. Treatment-emergent means the event started on or after the first dose.</span> </p>
+<p><span class="c systemfooter2">Source: 04_tables.sas</span> </p>
+</div>
+</section>
+<section data-name="Report" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX5" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Table 6</span> </p>
+<p><span class="c systemtitle2">Treatment-Emergent Adverse Events by Body System and Preferred Term - Safety Population</span> </p>
+</div>
+<h1 class="contentprocname toc">The Report Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Detailed and/or summarized report</h1>
+<article aria-label="Table 1">
+<h1 class="contentitem toc">Table 1</h1>
+<table class="table" style="border-spacing: 0" aria-label="Detailed and/or summarized report">
+<caption aria-label="Detailed and/or summarized report"></caption>
+<colgroup><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c header" scope="col">&#160;</th>
+<th class="c header" scope="col">Placebo<br/>(N=86)</th>
+<th class="c header" scope="col">Xanomeline<br/>Low Dose<br/>(N=84)</th>
+<th class="c header" scope="col">Xanomeline<br/>High Dose<br/>(N=84)</th>
+<th class="c header" scope="col">Total<br/>(N=254)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">GENERAL&#160;DISORDERS&#160;AND&#160;ADMINISTRATION&#160;SITE&#160;CONDITIONS</td>
+<td class="c data" style="width: 1.2in">21 (24.4%)</td>
+<td class="c data" style="width: 1.2in">47 (56.0%)</td>
+<td class="c data" style="width: 1.2in">40 (47.6%)</td>
+<td class="c data" style="width: 1.2in">108 (42.5%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;PRURITUS</td>
+<td class="c data" style="width: 1.2in">6 (7.0%)</td>
+<td class="c data" style="width: 1.2in">22 (26.2%)</td>
+<td class="c data" style="width: 1.2in">22 (26.2%)</td>
+<td class="c data" style="width: 1.2in">50 (19.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;ERYTHEMA</td>
+<td class="c data" style="width: 1.2in">3 (3.5%)</td>
+<td class="c data" style="width: 1.2in">12 (14.3%)</td>
+<td class="c data" style="width: 1.2in">15 (17.9%)</td>
+<td class="c data" style="width: 1.2in">30 (11.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;DERMATITIS</td>
+<td class="c data" style="width: 1.2in">5 (5.8%)</td>
+<td class="c data" style="width: 1.2in">9 (10.7%)</td>
+<td class="c data" style="width: 1.2in">7 (8.3%)</td>
+<td class="c data" style="width: 1.2in">21 (8.3%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;IRRITATION</td>
+<td class="c data" style="width: 1.2in">3 (3.5%)</td>
+<td class="c data" style="width: 1.2in">9 (10.7%)</td>
+<td class="c data" style="width: 1.2in">9 (10.7%)</td>
+<td class="c data" style="width: 1.2in">21 (8.3%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;VESICLES</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">4 (4.8%)</td>
+<td class="c data" style="width: 1.2in">6 (7.1%)</td>
+<td class="c data" style="width: 1.2in">11 (4.3%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;FATIGUE</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">5 (6.0%)</td>
+<td class="c data" style="width: 1.2in">5 (6.0%)</td>
+<td class="c data" style="width: 1.2in">11 (4.3%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;OEDEMA&#160;PERIPHERAL</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">5 (2.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;SWELLING</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;URTICARIA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CHILLS</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;MALAISE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PYREXIA</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;PAIN</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;PERSPIRATION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;REACTION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ASTHENIA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CHEST&#160;DISCOMFORT</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CHEST&#160;PAIN</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;OEDEMA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PAIN</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;BLEEDING</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;DESQUAMATION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;DISCHARGE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;DISCOLOURATION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;INDURATION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;APPLICATION&#160;SITE&#160;WARMTH</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;FEELING&#160;ABNORMAL</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;FEELING&#160;COLD</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;INFLAMMATION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SECRETION&#160;DISCHARGE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SUDDEN&#160;DEATH</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SWELLING</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ULCER</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">SKIN&#160;AND&#160;SUBCUTANEOUS&#160;TISSUE&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">20 (23.3%)</td>
+<td class="c data" style="width: 1.2in">39 (46.4%)</td>
+<td class="c data" style="width: 1.2in">40 (47.6%)</td>
+<td class="c data" style="width: 1.2in">99 (39.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PRURITUS</td>
+<td class="c data" style="width: 1.2in">8 (9.3%)</td>
+<td class="c data" style="width: 1.2in">21 (25.0%)</td>
+<td class="c data" style="width: 1.2in">26 (31.0%)</td>
+<td class="c data" style="width: 1.2in">55 (21.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ERYTHEMA</td>
+<td class="c data" style="width: 1.2in">8 (9.3%)</td>
+<td class="c data" style="width: 1.2in">14 (16.7%)</td>
+<td class="c data" style="width: 1.2in">14 (16.7%)</td>
+<td class="c data" style="width: 1.2in">36 (14.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;RASH</td>
+<td class="c data" style="width: 1.2in">5 (5.8%)</td>
+<td class="c data" style="width: 1.2in">13 (15.5%)</td>
+<td class="c data" style="width: 1.2in">9 (10.7%)</td>
+<td class="c data" style="width: 1.2in">27 (10.6%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HYPERHIDROSIS</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">4 (4.8%)</td>
+<td class="c data" style="width: 1.2in">8 (9.5%)</td>
+<td class="c data" style="width: 1.2in">14 (5.5%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SKIN&#160;IRRITATION</td>
+<td class="c data" style="width: 1.2in">3 (3.5%)</td>
+<td class="c data" style="width: 1.2in">6 (7.1%)</td>
+<td class="c data" style="width: 1.2in">5 (6.0%)</td>
+<td class="c data" style="width: 1.2in">14 (5.5%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BLISTER</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">5 (6.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">6 (2.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;RASH&#160;PRURITIC</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PRURITUS&#160;GENERALISED</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;URTICARIA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ACTINIC&#160;KERATOSIS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ALOPECIA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;COLD&#160;SWEAT</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DERMATITIS&#160;CONTACT</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DRUG&#160;ERUPTION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;RASH&#160;ERYTHEMATOUS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;RASH&#160;MACULO-PAPULAR</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SKIN&#160;EXFOLIATION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SKIN&#160;ODOUR&#160;ABNORMAL</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SKIN&#160;ULCER</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">NERVOUS&#160;SYSTEM&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">8 (9.3%)</td>
+<td class="c data" style="width: 1.2in">20 (23.8%)</td>
+<td class="c data" style="width: 1.2in">25 (29.8%)</td>
+<td class="c data" style="width: 1.2in">53 (20.9%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DIZZINESS</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">8 (9.5%)</td>
+<td class="c data" style="width: 1.2in">11 (13.1%)</td>
+<td class="c data" style="width: 1.2in">21 (8.3%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HEADACHE</td>
+<td class="c data" style="width: 1.2in">3 (3.5%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">5 (6.0%)</td>
+<td class="c data" style="width: 1.2in">11 (4.3%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SYNCOPE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">4 (4.8%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">7 (2.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SOMNOLENCE</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">6 (2.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;TRANSIENT&#160;ISCHAEMIC&#160;ATTACK</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BURNING&#160;SENSATION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;LETHARGY</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;AMNESIA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BALANCE&#160;DISORDER</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;COGNITIVE&#160;DISORDER</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;COMPLEX&#160;PARTIAL&#160;SEIZURES</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;COORDINATION&#160;ABNORMAL</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HEMIANOPIA&#160;HOMONYMOUS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HYPERSOMNIA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PARAESTHESIA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PARAESTHESIA&#160;ORAL</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PARKINSON&apos;S&#160;DISEASE</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PAROSMIA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PARTIAL&#160;SEIZURES&#160;WITH&#160;SECONDARY&#160;GENERALISATION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PSYCHOMOTOR&#160;HYPERACTIVITY</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;STUPOR</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SYNCOPE&#160;VASOVAGAL</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">GASTROINTESTINAL&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">17 (19.8%)</td>
+<td class="c data" style="width: 1.2in">14 (16.7%)</td>
+<td class="c data" style="width: 1.2in">20 (23.8%)</td>
+<td class="c data" style="width: 1.2in">51 (20.1%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DIARRHOEA</td>
+<td class="c data" style="width: 1.2in">9 (10.5%)</td>
+<td class="c data" style="width: 1.2in">4 (4.8%)</td>
+<td class="c data" style="width: 1.2in">4 (4.8%)</td>
+<td class="c data" style="width: 1.2in">17 (6.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;VOMITING</td>
+<td class="c data" style="width: 1.2in">3 (3.5%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">7 (8.3%)</td>
+<td class="c data" style="width: 1.2in">13 (5.1%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;NAUSEA</td>
+<td class="c data" style="width: 1.2in">3 (3.5%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">6 (7.1%)</td>
+<td class="c data" style="width: 1.2in">12 (4.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ABDOMINAL&#160;PAIN</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">5 (2.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SALIVARY&#160;HYPERSECRETION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">4 (4.8%)</td>
+<td class="c data" style="width: 1.2in">4 (1.6%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DYSPEPSIA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ABDOMINAL&#160;DISCOMFORT</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CONSTIPATION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DYSPHAGIA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;FLATULENCE</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;GASTROINTESTINAL&#160;HAEMORRHAGE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;GASTROOESOPHAGEAL&#160;REFLUX&#160;DISEASE</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;GLOSSITIS</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HIATUS&#160;HERNIA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;RECTAL&#160;HAEMORRHAGE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;STOMACH&#160;DISCOMFORT</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">CARDIAC&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">12 (14.0%)</td>
+<td class="c data" style="width: 1.2in">13 (15.5%)</td>
+<td class="c data" style="width: 1.2in">15 (17.9%)</td>
+<td class="c data" style="width: 1.2in">40 (15.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SINUS&#160;BRADYCARDIA</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">7 (8.3%)</td>
+<td class="c data" style="width: 1.2in">8 (9.5%)</td>
+<td class="c data" style="width: 1.2in">17 (6.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;MYOCARDIAL&#160;INFARCTION</td>
+<td class="c data" style="width: 1.2in">4 (4.7%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">4 (4.8%)</td>
+<td class="c data" style="width: 1.2in">10 (3.9%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ATRIAL&#160;FIBRILLATION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">5 (2.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SUPRAVENTRICULAR&#160;EXTRASYSTOLES</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;VENTRICULAR&#160;EXTRASYSTOLES</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ATRIAL&#160;FLUTTER</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ATRIOVENTRICULAR&#160;BLOCK&#160;FIRST&#160;DEGREE</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BUNDLE&#160;BRANCH&#160;BLOCK&#160;RIGHT</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PALPITATIONS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ATRIAL&#160;HYPERTROPHY</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ATRIOVENTRICULAR&#160;BLOCK&#160;SECOND&#160;DEGREE</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BRADYCARDIA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BUNDLE&#160;BRANCH&#160;BLOCK&#160;LEFT</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CARDIAC&#160;DISORDER</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CARDIAC&#160;FAILURE&#160;CONGESTIVE</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SINUS&#160;ARRHYTHMIA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SUPRAVENTRICULAR&#160;TACHYCARDIA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;TACHYCARDIA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;VENTRICULAR&#160;HYPERTROPHY</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;WOLFF-PARKINSON-WHITE&#160;SYNDROME</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">INFECTIONS&#160;AND&#160;INFESTATIONS</td>
+<td class="c data" style="width: 1.2in">16 (18.6%)</td>
+<td class="c data" style="width: 1.2in">9 (10.7%)</td>
+<td class="c data" style="width: 1.2in">13 (15.5%)</td>
+<td class="c data" style="width: 1.2in">38 (15.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;NASOPHARYNGITIS</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">4 (4.8%)</td>
+<td class="c data" style="width: 1.2in">6 (7.1%)</td>
+<td class="c data" style="width: 1.2in">12 (4.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;UPPER&#160;RESPIRATORY&#160;TRACT&#160;INFECTION</td>
+<td class="c data" style="width: 1.2in">6 (7.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">10 (3.9%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;INFLUENZA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;URINARY&#160;TRACT&#160;INFECTION</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CYSTITIS</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;EAR&#160;INFECTION</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BRONCHITIS</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CELLULITIS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CERVICITIS</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;GASTROENTERITIS&#160;VIRAL</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HORDEOLUM</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;LOCALISED&#160;INFECTION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;LOWER&#160;RESPIRATORY&#160;TRACT&#160;INFECTION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PNEUMONIA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;RHINITIS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;VAGINAL&#160;MYCOSIS</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;VIRAL&#160;INFECTION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">PSYCHIATRIC&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">10 (11.6%)</td>
+<td class="c data" style="width: 1.2in">10 (11.9%)</td>
+<td class="c data" style="width: 1.2in">8 (9.5%)</td>
+<td class="c data" style="width: 1.2in">28 (11.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CONFUSIONAL&#160;STATE</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">6 (2.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;AGITATION</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">5 (2.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;INSOMNIA</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">4 (1.6%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ANXIETY</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DELUSION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;IRRITABILITY</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;COMPLETED&#160;SUICIDE</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DELIRIUM</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DEPRESSED&#160;MOOD</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DISORIENTATION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HALLUCINATION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HALLUCINATION,&#160;VISUAL</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;LIBIDO&#160;DECREASED</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;LISTLESS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;NIGHTMARE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;RESTLESSNESS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">RESPIRATORY,&#160;THORACIC&#160;AND&#160;MEDIASTINAL&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">8 (9.3%)</td>
+<td class="c data" style="width: 1.2in">9 (10.7%)</td>
+<td class="c data" style="width: 1.2in">10 (11.9%)</td>
+<td class="c data" style="width: 1.2in">27 (10.6%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;COUGH</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">5 (6.0%)</td>
+<td class="c data" style="width: 1.2in">5 (6.0%)</td>
+<td class="c data" style="width: 1.2in">11 (4.3%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;NASAL&#160;CONGESTION</td>
+<td class="c data" style="width: 1.2in">3 (3.5%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">7 (2.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DYSPNOEA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;EPISTAXIS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PHARYNGOLARYNGEAL&#160;PAIN</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;RHINORRHOEA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ALLERGIC&#160;GRANULOMATOUS&#160;ANGIITIS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DYSPHONIA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;EMPHYSEMA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HAEMOPTYSIS</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PHARYNGEAL&#160;ERYTHEMA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;POSTNASAL&#160;DRIP</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PRODUCTIVE&#160;COUGH</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;RALES</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;RESPIRATORY&#160;TRACT&#160;CONGESTION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">INVESTIGATIONS</td>
+<td class="c data" style="width: 1.2in">10 (11.6%)</td>
+<td class="c data" style="width: 1.2in">6 (7.1%)</td>
+<td class="c data" style="width: 1.2in">6 (7.1%)</td>
+<td class="c data" style="width: 1.2in">22 (8.7%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ELECTROCARDIOGRAM&#160;ST&#160;SEGMENT&#160;DEPRESSION</td>
+<td class="c data" style="width: 1.2in">4 (4.7%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">5 (2.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ELECTROCARDIOGRAM&#160;T&#160;WAVE&#160;INVERSION</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">4 (1.6%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BLOOD&#160;GLUCOSE&#160;INCREASED</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ELECTROCARDIOGRAM&#160;T&#160;WAVE&#160;AMPLITUDE&#160;DECREASED</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BIOPSY</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BIOPSY&#160;PROSTATE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BLOOD&#160;ALKALINE&#160;PHOSPHATASE&#160;INCREASED</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BLOOD&#160;CHOLESTEROL&#160;INCREASED</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BLOOD&#160;CREATINE&#160;PHOSPHOKINASE&#160;INCREASED</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BLOOD&#160;URINE&#160;PRESENT</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BODY&#160;TEMPERATURE&#160;INCREASED</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CYSTOSCOPY</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HEART&#160;RATE&#160;INCREASED</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HEART&#160;RATE&#160;IRREGULAR</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;NASAL&#160;MUCOSA&#160;BIOPSY</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;WEIGHT&#160;DECREASED</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">MUSCULOSKELETAL&#160;AND&#160;CONNECTIVE&#160;TISSUE&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">4 (4.7%)</td>
+<td class="c data" style="width: 1.2in">7 (8.3%)</td>
+<td class="c data" style="width: 1.2in">7 (8.3%)</td>
+<td class="c data" style="width: 1.2in">18 (7.1%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BACK&#160;PAIN</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">5 (2.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ARTHRALGIA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">4 (1.6%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SHOULDER&#160;PAIN</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;MUSCLE&#160;SPASMS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ARTHRITIS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;FLANK&#160;PAIN</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;MUSCULAR&#160;WEAKNESS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;MYALGIA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PAIN&#160;IN&#160;EXTREMITY</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">INJURY,&#160;POISONING&#160;AND&#160;PROCEDURAL&#160;COMPLICATIONS</td>
+<td class="c data" style="width: 1.2in">4 (4.7%)</td>
+<td class="c data" style="width: 1.2in">5 (6.0%)</td>
+<td class="c data" style="width: 1.2in">5 (6.0%)</td>
+<td class="c data" style="width: 1.2in">14 (5.5%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CONTUSION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">4 (1.6%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;EXCORIATION</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">4 (1.6%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;FALL</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">4 (1.6%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HIP&#160;FRACTURE</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SKIN&#160;LACERATION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;FACIAL&#160;BONES&#160;FRACTURE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;JOINT&#160;DISLOCATION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;WOUND</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">RENAL&#160;AND&#160;URINARY&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">4 (4.7%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">10 (3.9%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;MICTURITION&#160;URGENCY</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DYSURIA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;NEPHROLITHIASIS</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CALCULUS&#160;URETHRAL</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;INCONTINENCE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;POLLAKIURIA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">METABOLISM&#160;AND&#160;NUTRITION&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">6 (7.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">9 (3.5%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DECREASED&#160;APPETITE</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;FOOD&#160;CRAVING</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;INCREASED&#160;APPETITE</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DEHYDRATION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;DIABETES&#160;MELLITUS</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HYPONATRAEMIA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">VASCULAR&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">3 (3.5%)</td>
+<td class="c data" style="width: 1.2in">3 (3.6%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">7 (2.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HYPOTENSION</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HYPERTENSION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HOT&#160;FLUSH</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ORTHOSTATIC&#160;HYPOTENSION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;WOUND&#160;HAEMORRHAGE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">EYE&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">5 (2.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;VISION&#160;BLURRED</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CONJUNCTIVAL&#160;HAEMORRHAGE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CONJUNCTIVITIS</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;EYE&#160;ALLERGY</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;EYE&#160;PRURITUS</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;EYE&#160;SWELLING</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">SURGICAL&#160;AND&#160;MEDICAL&#160;PROCEDURES</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">5 (2.0%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CATARACT&#160;OPERATION</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ACROCHORDON&#160;EXCISION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;EYE&#160;LASER&#160;SURGERY</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;SKIN&#160;LESION&#160;EXCISION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">EAR&#160;AND&#160;LABYRINTH&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">4 (1.6%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;VERTIGO</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;CERUMEN&#160;IMPACTION</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;EAR&#160;PAIN</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">CONGENITAL,&#160;FAMILIAL&#160;AND&#160;GENETIC&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;VENTRICULAR&#160;SEPTAL&#160;DEFECT</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">NEOPLASMS&#160;BENIGN,&#160;MALIGNANT&#160;AND&#160;UNSPECIFIED&#160;(INCL&#160;CYSTS&#160;AND&#160;POLYPS)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">2 (2.4%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;COLON&#160;CANCER</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;MALIGNANT&#160;FIBROUS&#160;HISTIOCYTOMA</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PROSTATE&#160;CANCER</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">REPRODUCTIVE&#160;SYSTEM&#160;AND&#160;BREAST&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">2 (2.3%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">3 (1.2%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;BENIGN&#160;PROSTATIC&#160;HYPERPLASIA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">2 (0.8%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;PELVIC&#160;PAIN</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">HEPATOBILIARY&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HYPERBILIRUBINAEMIA</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">IMMUNE&#160;SYSTEM&#160;DISORDERS</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;HYPERSENSITIVITY</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">SOCIAL&#160;CIRCUMSTANCES</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+<tr>
+<td class="data" style="white-space: pre; width: 3.6in">&#160;&#160;&#160;&#160;ALCOHOL&#160;USE</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">0 (0.0%)</td>
+<td class="c data" style="width: 1.2in">1 (1.2%)</td>
+<td class="c data" style="width: 1.2in">1 (0.4%)</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<div class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemfooter">Number and percent of subjects with at least one event in the body system or term. Sorted by total frequency.</span> </p>
+<p><span class="c systemfooter2">Source: 04_tables.sas</span> </p>
+</div>
+</section>
+<section data-name="SQL" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX6" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Cross-check: events in ADTTE by arm (should equal &apos;Any dermatologic AE&apos; in Table 5: 29 / 62 / 61)</span> </p>
+</div>
+<h1 class="contentprocname toc">The SQL Procedure</h1>
+<article aria-label="Query Results">
+<h1 class="contentitem toc">Query Results</h1>
+<table class="table" style="border-spacing: 0" aria-label="Query Results">
+<caption aria-label="Query Results"></caption>
+<colgroup><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">Planned Treatment</th>
+<th class="r b header" scope="col">n_events</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data">Placebo</td>
+<td class="r data">29</td>
+</tr>
+<tr>
+<td class="data">Xanomeline High Dose</td>
+<td class="r data">61</td>
+</tr>
+<tr>
+<td class="data">Xanomeline Low Dose</td>
+<td class="r data">62</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="SQL" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX7" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Cross-check: subjects with any treatment-emergent AE by arm (Table 5: 65 / 77 / 76)</span> </p>
+</div>
+<h1 class="contentprocname toc">The SQL Procedure</h1>
+<article aria-label="Query Results">
+<h1 class="contentitem toc">Query Results</h1>
+<table class="table" style="border-spacing: 0" aria-label="Query Results">
+<caption aria-label="Query Results"></caption>
+<colgroup><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">Actual Treatment</th>
+<th class="r b header" scope="col">n_subjects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data">Placebo</td>
+<td class="r data">65</td>
+</tr>
+<tr>
+<td class="data">Xanomeline High Dose</td>
+<td class="r data">76</td>
+</tr>
+<tr>
+<td class="data">Xanomeline Low Dose</td>
+<td class="r data">77</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</div>
+</body>
+</html>

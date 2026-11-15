@@ -14,7 +14,7 @@ Complete one section per program after each run. Save the log in `logs/` with th
 | 91_qc_adae.sas | 2026-11-15 | Yes (logs/91_qc_adae_log.html) | Yes | Yes | Yes | Yes | rushadnihal / Claude | |
 | 03_adtte.sas | 2026-11-15 | Yes (logs/03_adtte_log.html, run 2) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
 | 92_qc_adtte.sas | 2026-11-15 | Yes (logs/92_qc_adtte_log.html, run 2) | Yes | Yes | Yes | Yes | rushadnihal / Claude | |
-| 04_tables.sas | | | | | | | |
+| 04_tables.sas | 2026-11-15 | Yes (logs/04_tables_log.html, run 3) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
 | 05_km_cox.sas | | | | | | | |
 | 06_mixed_model.sas | | | | | | | |
 
@@ -38,7 +38,12 @@ Complete one section per program after each run. Save the log in `logs/` with th
 
 | Output | Numbers cross-checked against dataset | Titles and footnotes correct | Notes |
 |---|---|---|---|
-| | | | |
+| output/04_tables.rtf, Table 1 (populations) | Yes: recomputed from ADSL (pandas): ITT/safety 86/84/84, efficacy 79/81/74, completers Week 8/16/24 74/60/56, 68/42/37, 60/28/30 | Yes | Total column is the same 254 subjects |
+| Table 2 (baseline) | Yes: n, mean, SD, median, min, max for age, height, weight, BMI, education, disease duration, MMSE; sex, race, age-group counts | Yes | One subject has no baseline weight, so weight and BMI n = 83 in Low Dose; BMI group shows 1 Missing. No baseline p-values (randomized arms) |
+| Table 3 (disposition) | Yes: discontinued 28/59/57, discontinued for AE 8/44/40 | Yes | |
+| Table 4 (exposure) | Yes: duration, cumulative dose, average daily dose match ADSL | Yes | Dose is as planned (not measured) |
+| Table 5 (TEAE overview) | Yes: any TEAE 65/77/76, related 43/72/70, severe 5/16/8, serious 0/1/2, fatal 2/1/0, dermatologic 29/62/61 | Yes | Dermatologic counts also equal the ADTTE event counts (cross-check in the log output) |
+| Table 6 (TEAE by body system and term) | Partly: body-system totals for the top 4 systems and the preferred-term counts for the top system recomputed from ADAE | Yes | Ties in preferred-term counts are sorted alphabetically |
 
 ## Sign-off
 - Completed by:
@@ -51,3 +56,5 @@ Complete one section per program after each run. Save the log in `logs/` with th
 - **00_setup.sas, re-run:** after adding MH and VS (needed for ADSL baseline height, weight, BMI and disease duration) the program was re-run: 0 errors, 0 warnings, 19 datasets. The only "ERROR" text in the log is the source line of the missing-file message inside the macro, which did not fire.
 
 - **03_adtte.sas / 92_qc_adtte.sas, run 1:** `03_adtte.sas` had 2 errors from check 4 (a PROC SQL query with no FROM clause on the outer select); the ADTTE dataset itself was created correctly before the error. `92_qc_adtte.sas` had ERROR 180-322 because only the program's file name had been pasted into the editor, so nothing ran. Both were re-run (run 2) after fixing check 4 and pasting the full QC program: 0 errors, 0 warnings. Run 1 logs were not kept.
+
+- **04_tables.sas, runs 1 to 3:** runs 1 and 2 had errors caused by an incomplete copy of the program in the editor (the paste stopped partway through the Table 1 section, and a leftover half line then broke the `%flagrow` call), not by program logic. Run 3, using the uploaded complete file, had 0 errors and 0 warnings but the log showed five "variable is uninitialized" notes from `%init`, and Table 2 rows were out of order (PROC REPORT sorts an ORDER variable by formatted value by default). Both were fixed (`call missing` in `%init`, `order=internal` in `%rpt`) and the program was re-run. The saved log, results and RTF are from that last run: 0 errors, 0 warnings, no uninitialized variables, no merge notes. The only unusual notes are 7 Cartesian product notes from the intended zero-fill cross join in `%catrows`. Earlier run logs were not kept.
