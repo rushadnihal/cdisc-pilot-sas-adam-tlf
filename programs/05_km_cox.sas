@@ -28,9 +28,10 @@ libname adam "&root/data/adam" access=readonly;
 options nodate nonumber;
 
 proc format;
+  /* Labels sort alphabetically in the same order as the doses (Placebo, 54 mg, 81 mg) */
   value trtf 0  = 'Placebo'
-             54 = 'Xanomeline Low Dose'
-             81 = 'Xanomeline High Dose';
+             54 = 'Xanomeline 54 mg (Low Dose)'
+             81 = 'Xanomeline 81 mg (High Dose)';
 run;
 
 /* ---- 1. Analysis dataset ---------------------------------------------------- */
@@ -39,7 +40,8 @@ data work.tte;
   where saffl = 'Y' and paramcd = 'TTDE';
   event = 1 - cnsr;
   format trtan trtf.;
-  label aval = 'Days from first dose to first dermatologic AE or censoring';
+  label aval  = 'Days from first dose to first dermatologic AE or censoring'
+        trtan = 'Treatment arm';
 run;
 
 title1 "Check: analysis dataset by treatment arm";
@@ -76,14 +78,15 @@ run;
 /* ---- 4. Table 8: Cox model, treatment only ---------------------------------------------- */
 title1 "Table 8";
 title2 "Cox Proportional Hazards Model for Time to First Dermatologic Adverse Event - Treatment Only";
-footnote1 "Hazard ratios compare each pair of arms. A ratio above 1 means a higher rate of dermatologic events in the first-named arm.";
+footnote1 "Hazard ratios compare each xanomeline arm with placebo and the high dose with the low dose. A ratio above 1 means a higher rate of events.";
 footnote2 "Efron method for tied event times. Source: 05_km_cox.sas";
 
-ods select ModelInfo FitStatistics GlobalTests ParameterEstimates HazardRatios;
+ods select ModelInfo FitStatistics GlobalTests ParameterEstimates HazardRatios ContrastEstimate;
 proc phreg data=work.tte;
   class trtan(ref='Placebo') / param=ref;
   model aval * event(0) = trtan / ties=efron risklimits;
-  hazardratio 'Treatment arm' trtan / diff=all;
+  hazardratio 'Versus placebo' trtan / diff=ref;
+  contrast 'High dose vs low dose' trtan -1 1 / estimate=exp;
 run;
 
 /* ---- 5. Table 9: Cox model adjusted for age and sex --------------------------------------- */
@@ -100,7 +103,7 @@ run;
 
 /* ---- 6. Proportional hazards assessment ------------------------------------------------------ */
 title1 "Check: Proportional Hazards Assessment";
-title2 "Cumulative martingale residual test of the treatment effect (model with treatment only)";
+title2 "Supremum test of the standardized score process (model with treatment only)";
 footnote1 "A small p-value would suggest that the hazard ratio changes over time. Source: 05_km_cox.sas";
 
 proc phreg data=work.tte;
