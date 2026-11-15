@@ -5,7 +5,7 @@ Purpose : Set the project root path, assign libnames, read the SDTM SAS transpor
 Inputs  : &root/data/sdtm/*.xpt  (CDISCPilot01 SDTM, phuse-org/phuse-scripts)
 Outputs : SDTM library (.sas7bdat copies in &root/data/sdtm), ADAM library (empty)
 Author  : rushadnihal
-Date    : 2026-11-15
+Date    : 2026-11-15 (updated 2026-11-15: added MH and VS for ADSL baseline variables)
 Notes   : The only hard-coded path in the project is the &root macro variable below.
 *******************************************************************************/
 
@@ -27,7 +27,7 @@ libname adam "&root/data/adam";
 
 %macro read_all;
   %local list i n name;
-  %let list = dm ds ex ae sv se sc qs relrec ta te ti ts tv suppdm suppae suppds;
+  %let list = dm ds ex ae sv se sc qs mh vs relrec ta te ti ts tv suppdm suppae suppds;
   %let n = %sysfunc(countw(&list));
   %do i = 1 %to &n;
     %let name = %scan(&list, &i);
@@ -38,7 +38,7 @@ libname adam "&root/data/adam";
 %read_all;
 
 /* Check 1: datasets present, observation and variable counts */
-title "SDTM library contents (expect 17 datasets)";
+title "SDTM library contents (expect 19 datasets)";
 proc sql;
   select memname label="Dataset", nobs label="Observations", nvar label="Variables"
   from dictionary.tables
