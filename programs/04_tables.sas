@@ -111,6 +111,7 @@ quit;
 %macro init(sect);
   data work.long_&sect;
     length roword 8 lbl $120 trtn 8 cell $30;
+    call missing(roword, lbl, trtn, cell);
     stop;
   run;
 %mend init;
@@ -241,7 +242,7 @@ quit;
   footnote2 "Source: 04_tables.sas";
   proc report data=&ds nowd split='|';
     columns roword lbl col1 col2 col3 col4;
-    define roword / order noprint;
+    define roword / order order=internal noprint;
     define lbl  / display ' ' style(column)={asis=on just=left cellwidth=3.6in};
     define col1 / display "Placebo|(N=&n1)"
                   style(column)={just=center cellwidth=1.2in} style(header)={just=center};
