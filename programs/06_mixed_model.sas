@@ -101,7 +101,7 @@ title;
 /* ---- 2. Output files ------------------------------------------------------------- */
 ods noproctitle;
 ods listing gpath="&root/output" image_dpi=200;
-ods graphics on / width=8in height=5.5in imagename="06_adascog_lsmeans" imagefmt=png;
+ods graphics on / reset=index width=8in height=5.5in imagename="06_adascog_lsmeans" imagefmt=png;
 ods rtf file="&root/output/06_mixed_model.rtf" style=journal startpage=yes;
 
 /* ---- 3. Table 10: ANCOVA at Week 24 with LOCF --------------------------------------- */
@@ -238,8 +238,8 @@ proc sgplot data=work.mm_plot;
   series x=xpos y=estimate / group=trtn markers markerattrs=(symbol=circlefilled size=8)
          name='lsm';
   refline 0 / axis=y lineattrs=(pattern=dash);
-  xaxis values=(8 16 24) valuesdisplay=('Week 8' 'Week 16' 'Week 24')
-        min=6 max=26 label='Visit';
+  xaxis values=(6 8 16 24 26) valuesdisplay=(' ' 'Week 8' 'Week 16' 'Week 24' ' ')
+        label='Visit';
   yaxis label='LS mean change from baseline (95% CI)';
   keylegend 'lsm' / title='Treatment arm';
 run;
