@@ -1,0 +1,3629 @@
+<!DOCTYPE html>
+<html class="ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="SAS 9.4" name="generator"/>
+<title>Results: 00_explore_sdtm.sas</title>
+<style>
+/*<![CDATA[*/
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.c section > table, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.c section > pre, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.c div > table,
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.c div > pre, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.c article > table, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.c article > pre,
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.j section > table, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.j section > pre, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.j div > table,
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.j div > pre, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.j article > table, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.j article > pre,
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.c p.note, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.c p.warning, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.c p.error, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.c p.fatal,
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.j p.note, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.j p.warning, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.j p.error, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.j p.fatal,
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.c > table.layoutcontainer, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.l table, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.l pre, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.l p.note,
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.l p.warning, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.l p.error, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.l p.fatal { margin-left: 0 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.c table, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.c pre, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.c p.note,
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.c p.warning, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.c p.error, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.r table, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.r pre, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.r p.note,
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.r table, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.r pre, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.r p.note,
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.r p.warning, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.r p.error, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion.r p.fatal { margin-right: 0 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c article, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c aside, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c details, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c figcaption, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c figure, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c footer, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c header, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c hgroup, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c nav, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c section { display: block }
+html.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c { font-size: 100% }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body { margin: 1em; font-size: 13px; line-height: 1.231 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c ul, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c ol { margin: 1em 0; padding: 0 0 0 40px }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c dd { margin: 0 0 0 40px }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c nav ul, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c img { border: 0; vertical-align: middle }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c svg:not(:root) { overflow: hidden }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c figure { margin: 0 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c table { border-collapse: collapse; border-spacing: 0 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutcontainer { border-collapse: separate; border-spacing: 0 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c p { margin-top: 0; text-align: left }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c h1.heading1 { text-align: left }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c h2.heading2 { text-align: left }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c h3.heading3 { text-align: left }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c h4.heading4 { text-align: left }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c h5.heading5 { text-align: left }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c h6.heading6 { text-align: left }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c span { text-align: left }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c table { margin-bottom: 1em }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c td, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c th { text-align: left; padding: 3px 6px; vertical-align: top }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c td[class$="fixed"], .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c th[class$="fixed"] { white-space: pre }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c section, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c article { padding-top: 1px; padding-bottom: 8px }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .stacked-value { text-align: left; display: block }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .stacked-cell > .stacked-value, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c td.data > td.data, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c th.data > td.data, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c th.data > th.data, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c td.data > th.data, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c th.header > th.header { border: 0 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .stacked-cell > div.data { border-width: 0 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systitleandfootercontainer > p { margin: 0 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .batch { display: table }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .toc { display: none }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .proc_note_group, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .proc_title_group { margin-bottom: 1em }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c p.proctitle { margin: 0 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c p.note, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c p.warning, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c p.error, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c p.fatal { display: table }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .notebanner, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .warnbanner, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .errorbanner, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .fatalbanner,
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .notecontent, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .warncontent, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .errorcontent, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .fatalcontent { display: table-cell; padding: 0.5em }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .notebanner, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .warnbanner, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .errorbanner, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .fatalbanner { padding-right: 0 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body > div > ol li { text-align: left }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .c { text-align: center }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .r { text-align: right }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .l { text-align: left }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .j { text-align: justify }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .d { text-align: right }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .b { vertical-align: bottom }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .m { vertical-align: middle }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .t { vertical-align: top }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .accessiblecaption {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c a:active { color: #800080 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .batch > tbody, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .batch > thead, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .batch { border: hidden; }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .bylinecontainer > col, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .bylinecontainer > colgroup > col, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .bylinecontainer > colgroup, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .bylinecontainer > tr, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .bylinecontainer > * > tr, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .bylinecontainer > thead, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .bylinecontainer > tbody, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .bylinecontainer > tfoot { border: none; }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .cell, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .contentfolder, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .contentproclabel, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .data, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .graph > tbody, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .graph > thead, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .graph { border: hidden; }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .heading1, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .heading2, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .heading3, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .heading4, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .heading5, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .heading6 { font-family: Arial, Helvetica, sans-serif }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .indexaction, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutcontainer, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c a:link { color: #0000ff }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .list3, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .list4, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .list5, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .list6, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .list7, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .list8, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .listitem3, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .listitem4, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .listitem5, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .listitem6, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .listitem7, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .listitem8, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .output > tbody, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .output > thead, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .output { border: hidden; }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .pagesproclabel, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .parskip > col, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .parskip > colgroup > col, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .parskip > colgroup, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .parskip > tr, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .parskip > * > tr, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .parskip > thead, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .parskip > tbody, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .parskip > tfoot { border: none; }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemfooter, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemfooter10, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemfooter2, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemfooter3, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemfooter4, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemfooter5, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemfooter6, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemfooter7, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemfooter8, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemtitle, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemtitle10, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemtitle2, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemtitle3, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemtitle4, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemtitle5, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemtitle6, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemtitle7, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemtitle8, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systitleandfootercontainer > col, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systitleandfootercontainer > colgroup > col, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systitleandfootercontainer > colgroup, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systitleandfootercontainer > tr, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systitleandfootercontainer > * > tr, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systitleandfootercontainer > thead, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systitleandfootercontainer > tbody, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systitleandfootercontainer > tfoot { border: none; }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .table > col, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .table > tr, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .table { border: hidden; }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .titleandnotecontainer > col, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .titleandnotecontainer > colgroup > col, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .titleandnotecontainer > colgroup, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .titleandnotecontainer > tr, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .titleandnotecontainer > * > tr, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .titleandnotecontainer > thead, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .titleandnotecontainer > tbody, .ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .titleandnotecontainer > tfoot { border: none; }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c a:visited { color: #800080 }
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_ada01b79-3fa9-4dfa-a84c-718ebe59f05c .warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+</head>
+<body class="body">
+<div id="div_ada01b79-3fa9-4dfa-a84c-718ebe59f05c" class="c body">
+<h1 class="body toc">Results: 00_explore_sdtm.sas</h1>
+<section data-name="SQL" data-sec-type="proc">
+<div id="IDX" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">DM: rows vs distinct subjects</span> </p>
+</div>
+<h1 class="contentprocname toc">The SQL Procedure</h1>
+<article aria-label="Query Results">
+<h1 class="contentitem toc">Query Results</h1>
+<table class="table" style="border-spacing: 0" aria-label="Query Results">
+<caption aria-label="Query Results"></caption>
+<colgroup><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="r b header" scope="col">n_rows</th>
+<th class="r b header" scope="col">n_subjects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">306</td>
+<td class="r data">306</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX1" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">DM: planned vs actual arm</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table ARM * ACTARM</h1>
+<article aria-label="LIST Frequencies">
+<h1 class="contentitem toc">LIST Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="LIST Frequencies">
+<caption aria-label="LIST Frequencies"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">ARM</th>
+<th class="b header" scope="col">ACTARM</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Placebo</th>
+<th class="rowheader" scope="row">Placebo</th>
+<td class="r data">86</td>
+<td class="r data">28.10</td>
+<td class="r data">86</td>
+<td class="r data">28.10</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Screen Failure</th>
+<th class="rowheader" scope="row">Screen Failure</th>
+<td class="r data">52</td>
+<td class="r data">16.99</td>
+<td class="r data">138</td>
+<td class="r data">45.10</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Xanomeline High Dose</th>
+<th class="rowheader" scope="row">Xanomeline High Dose</th>
+<td class="r data">72</td>
+<td class="r data">23.53</td>
+<td class="r data">210</td>
+<td class="r data">68.63</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Xanomeline High Dose</th>
+<th class="rowheader" scope="row">Xanomeline Low Dose</th>
+<td class="r data">12</td>
+<td class="r data">3.92</td>
+<td class="r data">222</td>
+<td class="r data">72.55</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Xanomeline Low Dose</th>
+<th class="rowheader" scope="row">Xanomeline Low Dose</th>
+<td class="r data">84</td>
+<td class="r data">27.45</td>
+<td class="r data">306</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX2">
+<h1 class="contentfolder toc">Table ARMCD * ACTARMCD</h1>
+<article aria-label="LIST Frequencies">
+<h1 class="contentitem toc">LIST Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="LIST Frequencies">
+<caption aria-label="LIST Frequencies"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">ARMCD</th>
+<th class="b header" scope="col">ACTARMCD</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Pbo</th>
+<th class="rowheader" scope="row">Pbo</th>
+<td class="r data">86</td>
+<td class="r data">28.10</td>
+<td class="r data">86</td>
+<td class="r data">28.10</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Scrnfail</th>
+<th class="rowheader" scope="row">Scrnfail</th>
+<td class="r data">52</td>
+<td class="r data">16.99</td>
+<td class="r data">138</td>
+<td class="r data">45.10</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Xan_Hi</th>
+<th class="rowheader" scope="row">Xan_Hi</th>
+<td class="r data">72</td>
+<td class="r data">23.53</td>
+<td class="r data">210</td>
+<td class="r data">68.63</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Xan_Hi</th>
+<th class="rowheader" scope="row">Xan_Lo</th>
+<td class="r data">12</td>
+<td class="r data">3.92</td>
+<td class="r data">222</td>
+<td class="r data">72.55</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Xan_Lo</th>
+<th class="rowheader" scope="row">Xan_Lo</th>
+<td class="r data">84</td>
+<td class="r data">27.45</td>
+<td class="r data">306</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX3" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">DM: sex, race, ethnicity, country</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table SEX</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Sex</th>
+</tr>
+<tr>
+<th class="b header" scope="col">SEX</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">F</th>
+<td class="r data">179</td>
+<td class="r data">58.50</td>
+<td class="r data">179</td>
+<td class="r data">58.50</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">M</th>
+<td class="r data">127</td>
+<td class="r data">41.50</td>
+<td class="r data">306</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX4">
+<h1 class="contentfolder toc">Table RACE</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Race</th>
+</tr>
+<tr>
+<th class="b header" scope="col">RACE</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">AMERICAN INDIAN OR ALASKA NATIVE</th>
+<td class="r data">2</td>
+<td class="r data">0.65</td>
+<td class="r data">2</td>
+<td class="r data">0.65</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ASIAN</th>
+<td class="r data">2</td>
+<td class="r data">0.65</td>
+<td class="r data">4</td>
+<td class="r data">1.31</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">BLACK OR AFRICAN AMERICAN</th>
+<td class="r data">29</td>
+<td class="r data">9.48</td>
+<td class="r data">33</td>
+<td class="r data">10.78</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">WHITE</th>
+<td class="r data">273</td>
+<td class="r data">89.22</td>
+<td class="r data">306</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX5">
+<h1 class="contentfolder toc">Table ETHNIC</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Ethnicity</th>
+</tr>
+<tr>
+<th class="b header" scope="col">ETHNIC</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">HISPANIC OR LATINO</th>
+<td class="r data">17</td>
+<td class="r data">5.56</td>
+<td class="r data">17</td>
+<td class="r data">5.56</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NOT HISPANIC OR LATINO</th>
+<td class="r data">289</td>
+<td class="r data">94.44</td>
+<td class="r data">306</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX6">
+<h1 class="contentfolder toc">Table COUNTRY</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Country</th>
+</tr>
+<tr>
+<th class="b header" scope="col">COUNTRY</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">USA</th>
+<td class="r data">306</td>
+<td class="r data">100.00</td>
+<td class="r data">306</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Means" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX7" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">DM: age</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The MEANS Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Means Procedure</h1>
+<article aria-label="Summary statistics">
+<h1 class="contentitem toc">Summary statistics</h1>
+<table class="table" style="border-spacing: 0" aria-label="Summary statistics">
+<caption aria-label="Summary statistics"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">Analysis Variable : AGE Age</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">N Miss</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="r b header" scope="col">Std Dev</th>
+<th class="r b header" scope="col">Minimum</th>
+<th class="r b header" scope="col">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">306</td>
+<td class="r data">0</td>
+<td class="r data">75.0882353</td>
+<td class="r data">8.4935111</td>
+<td class="r data">50.0000000</td>
+<td class="r data">89.0000000</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX8" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">SUPPDM: qualifier names and labels</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table RDOMAIN * QNAM * QLABEL</h1>
+<article aria-label="LIST Frequencies">
+<h1 class="contentitem toc">LIST Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="LIST Frequencies">
+<caption aria-label="LIST Frequencies"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">RDOMAIN</th>
+<th class="b header" scope="col">QNAM</th>
+<th class="b header" scope="col">QLABEL</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">DM</th>
+<th class="rowheader" scope="row">COMPLT16</th>
+<th class="rowheader" scope="row">Completers of Week 16 Population Flag</th>
+<td class="r data">147</td>
+<td class="r data">12.28</td>
+<td class="r data">147</td>
+<td class="r data">12.28</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DM</th>
+<th class="rowheader" scope="row">COMPLT24</th>
+<th class="rowheader" scope="row">Completers of Week 24 Population Flag</th>
+<td class="r data">118</td>
+<td class="r data">9.86</td>
+<td class="r data">265</td>
+<td class="r data">22.14</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DM</th>
+<th class="rowheader" scope="row">COMPLT8</th>
+<th class="rowheader" scope="row">Completers of Week 8 Population Flag</th>
+<td class="r data">190</td>
+<td class="r data">15.87</td>
+<td class="r data">455</td>
+<td class="r data">38.01</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DM</th>
+<th class="rowheader" scope="row">EFFICACY</th>
+<th class="rowheader" scope="row">Efficacy Population Flag</th>
+<td class="r data">234</td>
+<td class="r data">19.55</td>
+<td class="r data">689</td>
+<td class="r data">57.56</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DM</th>
+<th class="rowheader" scope="row">ITT</th>
+<th class="rowheader" scope="row">Intent to Treat Population Flag</th>
+<td class="r data">254</td>
+<td class="r data">21.22</td>
+<td class="r data">943</td>
+<td class="r data">78.78</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DM</th>
+<th class="rowheader" scope="row">SAFETY</th>
+<th class="rowheader" scope="row">Safety Population Flag</th>
+<td class="r data">254</td>
+<td class="r data">21.22</td>
+<td class="r data">1197</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX9" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">SUPPDM: values for each qualifier</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table QNAM * QVAL</h1>
+<article aria-label="LIST Frequencies">
+<h1 class="contentitem toc">LIST Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="LIST Frequencies">
+<caption aria-label="LIST Frequencies"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">QNAM</th>
+<th class="b header" scope="col">QVAL</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">COMPLT16</th>
+<th class="rowheader" scope="row">Y</th>
+<td class="r data">147</td>
+<td class="r data">12.28</td>
+<td class="r data">147</td>
+<td class="r data">12.28</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">COMPLT24</th>
+<th class="rowheader" scope="row">Y</th>
+<td class="r data">118</td>
+<td class="r data">9.86</td>
+<td class="r data">265</td>
+<td class="r data">22.14</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">COMPLT8</th>
+<th class="rowheader" scope="row">Y</th>
+<td class="r data">190</td>
+<td class="r data">15.87</td>
+<td class="r data">455</td>
+<td class="r data">38.01</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">EFFICACY</th>
+<th class="rowheader" scope="row">Y</th>
+<td class="r data">234</td>
+<td class="r data">19.55</td>
+<td class="r data">689</td>
+<td class="r data">57.56</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ITT</th>
+<th class="rowheader" scope="row">Y</th>
+<td class="r data">254</td>
+<td class="r data">21.22</td>
+<td class="r data">943</td>
+<td class="r data">78.78</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">SAFETY</th>
+<th class="rowheader" scope="row">Y</th>
+<td class="r data">254</td>
+<td class="r data">21.22</td>
+<td class="r data">1197</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX10" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">DS: category and standardized disposition term</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table DSCAT * DSDECOD</h1>
+<article aria-label="LIST Frequencies">
+<h1 class="contentitem toc">LIST Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="LIST Frequencies">
+<caption aria-label="LIST Frequencies"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">DSCAT</th>
+<th class="b header" scope="col">DSDECOD</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">DISPOSITION EVENT</th>
+<th class="rowheader" scope="row">ADVERSE EVENT</th>
+<td class="r data">92</td>
+<td class="r data">15.44</td>
+<td class="r data">92</td>
+<td class="r data">15.44</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISPOSITION EVENT</th>
+<th class="rowheader" scope="row">COMPLETED</th>
+<td class="r data">110</td>
+<td class="r data">18.46</td>
+<td class="r data">202</td>
+<td class="r data">33.89</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISPOSITION EVENT</th>
+<th class="rowheader" scope="row">DEATH</th>
+<td class="r data">3</td>
+<td class="r data">0.50</td>
+<td class="r data">205</td>
+<td class="r data">34.40</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISPOSITION EVENT</th>
+<th class="rowheader" scope="row">LACK OF EFFICACY</th>
+<td class="r data">4</td>
+<td class="r data">0.67</td>
+<td class="r data">209</td>
+<td class="r data">35.07</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISPOSITION EVENT</th>
+<th class="rowheader" scope="row">LOST TO FOLLOW-UP</th>
+<td class="r data">2</td>
+<td class="r data">0.34</td>
+<td class="r data">211</td>
+<td class="r data">35.40</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISPOSITION EVENT</th>
+<th class="rowheader" scope="row">PHYSICIAN DECISION</th>
+<td class="r data">3</td>
+<td class="r data">0.50</td>
+<td class="r data">214</td>
+<td class="r data">35.91</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISPOSITION EVENT</th>
+<th class="rowheader" scope="row">PROTOCOL VIOLATION</th>
+<td class="r data">6</td>
+<td class="r data">1.01</td>
+<td class="r data">220</td>
+<td class="r data">36.91</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISPOSITION EVENT</th>
+<th class="rowheader" scope="row">SCREEN FAILURE</th>
+<td class="r data">52</td>
+<td class="r data">8.72</td>
+<td class="r data">272</td>
+<td class="r data">45.64</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISPOSITION EVENT</th>
+<th class="rowheader" scope="row">STUDY TERMINATED BY SPONSOR</th>
+<td class="r data">7</td>
+<td class="r data">1.17</td>
+<td class="r data">279</td>
+<td class="r data">46.81</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISPOSITION EVENT</th>
+<th class="rowheader" scope="row">WITHDRAWAL BY SUBJECT</th>
+<td class="r data">27</td>
+<td class="r data">4.53</td>
+<td class="r data">306</td>
+<td class="r data">51.34</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">OTHER EVENT</th>
+<th class="rowheader" scope="row">FINAL LAB VISIT</th>
+<td class="r data">254</td>
+<td class="r data">42.62</td>
+<td class="r data">560</td>
+<td class="r data">93.96</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">OTHER EVENT</th>
+<th class="rowheader" scope="row">FINAL RETRIEVAL VISIT</th>
+<td class="r data">36</td>
+<td class="r data">6.04</td>
+<td class="r data">596</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX11" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">SUPPDS: qualifiers</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table QNAM * QLABEL * QVAL</h1>
+<article aria-label="LIST Frequencies">
+<h1 class="contentitem toc">LIST Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="LIST Frequencies">
+<caption aria-label="LIST Frequencies"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">QNAM</th>
+<th class="b header" scope="col">QLABEL</th>
+<th class="b header" scope="col">QVAL</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">ENTCRIT</th>
+<th class="rowheader" scope="row">PROTOCOL ENTRY CRITERIA NOT MET</th>
+<th class="rowheader" scope="row">16</th>
+<td class="r data">2</td>
+<td class="r data">66.67</td>
+<td class="r data">2</td>
+<td class="r data">66.67</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ENTCRIT</th>
+<th class="rowheader" scope="row">PROTOCOL ENTRY CRITERIA NOT MET</th>
+<th class="rowheader" scope="row">25</th>
+<td class="r data">1</td>
+<td class="r data">33.33</td>
+<td class="r data">3</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX12" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">EX: treatment, dose, frequency, route</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table EXTRT * EXDOSE * EXDOSU * EXDOSFRQ * EXROUTE</h1>
+<article aria-label="LIST Frequencies">
+<h1 class="contentitem toc">LIST Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="LIST Frequencies">
+<caption aria-label="LIST Frequencies"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">EXTRT</th>
+<th class="r b header" scope="col">EXDOSE</th>
+<th class="b header" scope="col">EXDOSU</th>
+<th class="b header" scope="col">EXDOSFRQ</th>
+<th class="b header" scope="col">EXROUTE</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">PLACEBO</th>
+<th class="r rowheader" scope="row">0</th>
+<th class="rowheader" scope="row">mg</th>
+<th class="rowheader" scope="row">QD</th>
+<th class="rowheader" scope="row">TRANSDERMAL</th>
+<td class="r data">226</td>
+<td class="r data">38.24</td>
+<td class="r data">226</td>
+<td class="r data">38.24</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">XANOMELINE</th>
+<th class="r rowheader" scope="row">54</th>
+<th class="rowheader" scope="row">mg</th>
+<th class="rowheader" scope="row">QD</th>
+<th class="rowheader" scope="row">TRANSDERMAL</th>
+<td class="r data">293</td>
+<td class="r data">49.58</td>
+<td class="r data">519</td>
+<td class="r data">87.82</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">XANOMELINE</th>
+<th class="r rowheader" scope="row">81</th>
+<th class="rowheader" scope="row">mg</th>
+<th class="rowheader" scope="row">QD</th>
+<th class="rowheader" scope="row">TRANSDERMAL</th>
+<td class="r data">72</td>
+<td class="r data">12.18</td>
+<td class="r data">591</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="SQL" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX13" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">EX: records per subject</span> </p>
+</div>
+<h1 class="contentprocname toc">The SQL Procedure</h1>
+<article aria-label="Query Results">
+<h1 class="contentitem toc">Query Results</h1>
+<table class="table" style="border-spacing: 0" aria-label="Query Results">
+<caption aria-label="Query Results"></caption>
+<colgroup><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="r b header" scope="col">n_subjects_with_ex</th>
+<th class="r b header" scope="col">n_records</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">254</td>
+<td class="r data">591</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="SQL" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX14" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">AE: subjects with at least one AE</span> </p>
+</div>
+<h1 class="contentprocname toc">The SQL Procedure</h1>
+<article aria-label="Query Results">
+<h1 class="contentitem toc">Query Results</h1>
+<table class="table" style="border-spacing: 0" aria-label="Query Results">
+<caption aria-label="Query Results"></caption>
+<colgroup><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="r b header" scope="col">n_subjects_with_ae</th>
+<th class="r b header" scope="col">n_events</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">225</td>
+<td class="r data">1191</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX15" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">AE: body system</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table AEBODSYS</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Body System or Organ Class</th>
+</tr>
+<tr>
+<th class="b header" scope="col">AEBODSYS</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">GENERAL DISORDERS AND ADMINISTRATION SITE CONDITIONS</th>
+<td class="r data">292</td>
+<td class="r data">24.52</td>
+<td class="r data">292</td>
+<td class="r data">24.52</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">SKIN AND SUBCUTANEOUS TISSUE DISORDERS</th>
+<td class="r data">276</td>
+<td class="r data">23.17</td>
+<td class="r data">568</td>
+<td class="r data">47.69</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NERVOUS SYSTEM DISORDERS</th>
+<td class="r data">101</td>
+<td class="r data">8.48</td>
+<td class="r data">669</td>
+<td class="r data">56.17</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">CARDIAC DISORDERS</th>
+<td class="r data">91</td>
+<td class="r data">7.64</td>
+<td class="r data">760</td>
+<td class="r data">63.81</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">GASTROINTESTINAL DISORDERS</th>
+<td class="r data">87</td>
+<td class="r data">7.30</td>
+<td class="r data">847</td>
+<td class="r data">71.12</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">INFECTIONS AND INFESTATIONS</th>
+<td class="r data">73</td>
+<td class="r data">6.13</td>
+<td class="r data">920</td>
+<td class="r data">77.25</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">RESPIRATORY, THORACIC AND MEDIASTINAL DISORDERS</th>
+<td class="r data">53</td>
+<td class="r data">4.45</td>
+<td class="r data">973</td>
+<td class="r data">81.70</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">INVESTIGATIONS</th>
+<td class="r data">40</td>
+<td class="r data">3.36</td>
+<td class="r data">1013</td>
+<td class="r data">85.05</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">PSYCHIATRIC DISORDERS</th>
+<td class="r data">40</td>
+<td class="r data">3.36</td>
+<td class="r data">1053</td>
+<td class="r data">88.41</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">INJURY, POISONING AND PROCEDURAL COMPLICATIONS</th>
+<td class="r data">29</td>
+<td class="r data">2.43</td>
+<td class="r data">1082</td>
+<td class="r data">90.85</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">MUSCULOSKELETAL AND CONNECTIVE TISSUE DISORDERS</th>
+<td class="r data">29</td>
+<td class="r data">2.43</td>
+<td class="r data">1111</td>
+<td class="r data">93.28</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">METABOLISM AND NUTRITION DISORDERS</th>
+<td class="r data">14</td>
+<td class="r data">1.18</td>
+<td class="r data">1125</td>
+<td class="r data">94.46</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">RENAL AND URINARY DISORDERS</th>
+<td class="r data">13</td>
+<td class="r data">1.09</td>
+<td class="r data">1138</td>
+<td class="r data">95.55</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">VASCULAR DISORDERS</th>
+<td class="r data">13</td>
+<td class="r data">1.09</td>
+<td class="r data">1151</td>
+<td class="r data">96.64</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">EYE DISORDERS</th>
+<td class="r data">12</td>
+<td class="r data">1.01</td>
+<td class="r data">1163</td>
+<td class="r data">97.65</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">EAR AND LABYRINTH DISORDERS</th>
+<td class="r data">6</td>
+<td class="r data">0.50</td>
+<td class="r data">1169</td>
+<td class="r data">98.15</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">REPRODUCTIVE SYSTEM AND BREAST DISORDERS</th>
+<td class="r data">5</td>
+<td class="r data">0.42</td>
+<td class="r data">1174</td>
+<td class="r data">98.57</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">SURGICAL AND MEDICAL PROCEDURES</th>
+<td class="r data">5</td>
+<td class="r data">0.42</td>
+<td class="r data">1179</td>
+<td class="r data">98.99</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NEOPLASMS BENIGN, MALIGNANT AND UNSPECIFIED (INCL CYSTS AND POLYPS)</th>
+<td class="r data">4</td>
+<td class="r data">0.34</td>
+<td class="r data">1183</td>
+<td class="r data">99.33</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">CONGENITAL, FAMILIAL AND GENETIC DISORDERS</th>
+<td class="r data">3</td>
+<td class="r data">0.25</td>
+<td class="r data">1186</td>
+<td class="r data">99.58</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">IMMUNE SYSTEM DISORDERS</th>
+<td class="r data">3</td>
+<td class="r data">0.25</td>
+<td class="r data">1189</td>
+<td class="r data">99.83</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">HEPATOBILIARY DISORDERS</th>
+<td class="r data">1</td>
+<td class="r data">0.08</td>
+<td class="r data">1190</td>
+<td class="r data">99.92</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">SOCIAL CIRCUMSTANCES</th>
+<td class="r data">1</td>
+<td class="r data">0.08</td>
+<td class="r data">1191</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX16" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">AE: severity, seriousness, relationship, outcome, action taken</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table AESEV</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Severity/Intensity</th>
+</tr>
+<tr>
+<th class="b header" scope="col">AESEV</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">MILD</th>
+<td class="r data">770</td>
+<td class="r data">64.65</td>
+<td class="r data">770</td>
+<td class="r data">64.65</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">MODERATE</th>
+<td class="r data">378</td>
+<td class="r data">31.74</td>
+<td class="r data">1148</td>
+<td class="r data">96.39</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">SEVERE</th>
+<td class="r data">43</td>
+<td class="r data">3.61</td>
+<td class="r data">1191</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX17">
+<h1 class="contentfolder toc">Table AESER</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Serious Event</th>
+</tr>
+<tr>
+<th class="b header" scope="col">AESER</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">N</th>
+<td class="r data">1188</td>
+<td class="r data">99.75</td>
+<td class="r data">1188</td>
+<td class="r data">99.75</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Y</th>
+<td class="r data">3</td>
+<td class="r data">0.25</td>
+<td class="r data">1191</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX18">
+<h1 class="contentfolder toc">Table AEREL</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Causality</th>
+</tr>
+<tr>
+<th class="b header" scope="col">AEREL</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">4</td>
+<td class="r data">0.34</td>
+<td class="r data">4</td>
+<td class="r data">0.34</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NONE</th>
+<td class="r data">322</td>
+<td class="r data">27.04</td>
+<td class="r data">326</td>
+<td class="r data">27.37</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">POSSIBLE</th>
+<td class="r data">343</td>
+<td class="r data">28.80</td>
+<td class="r data">669</td>
+<td class="r data">56.17</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">PROBABLE</th>
+<td class="r data">361</td>
+<td class="r data">30.31</td>
+<td class="r data">1030</td>
+<td class="r data">86.48</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">REMOTE</th>
+<td class="r data">161</td>
+<td class="r data">13.52</td>
+<td class="r data">1191</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX19">
+<h1 class="contentfolder toc">Table AEOUT</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Outcome of Adverse Event</th>
+</tr>
+<tr>
+<th class="b header" scope="col">AEOUT</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">FATAL</th>
+<td class="r data">3</td>
+<td class="r data">0.25</td>
+<td class="r data">3</td>
+<td class="r data">0.25</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NOT RECOVERED/NOT RESOLVED</th>
+<td class="r data">723</td>
+<td class="r data">60.71</td>
+<td class="r data">726</td>
+<td class="r data">60.96</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">RECOVERED/RESOLVED</th>
+<td class="r data">465</td>
+<td class="r data">39.04</td>
+<td class="r data">1191</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section id="IDX20">
+<h1 class="contentfolder toc">Table AEACN</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Action Taken with Study Treatment</th>
+</tr>
+<tr>
+<th class="b header" scope="col">AEACN</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">1191</td>
+<td class="r data">100.00</td>
+<td class="r data">1191</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX21" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">SUPPAE: qualifiers</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table QNAM * QLABEL</h1>
+<article aria-label="LIST Frequencies">
+<h1 class="contentitem toc">LIST Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="LIST Frequencies">
+<caption aria-label="LIST Frequencies"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">QNAM</th>
+<th class="b header" scope="col">QLABEL</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">AETRTEM</th>
+<th class="rowheader" scope="row">TREATMENT EMERGENT FLAG</th>
+<td class="r data">1191</td>
+<td class="r data">100.00</td>
+<td class="r data">1191</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX22" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">SUPPAE: values for each qualifier</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table QNAM * QVAL</h1>
+<article aria-label="LIST Frequencies">
+<h1 class="contentitem toc">LIST Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="LIST Frequencies">
+<caption aria-label="LIST Frequencies"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">QNAM</th>
+<th class="b header" scope="col">QVAL</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">AETRTEM</th>
+<th class="rowheader" scope="row">N</th>
+<td class="r data">65</td>
+<td class="r data">5.46</td>
+<td class="r data">65</td>
+<td class="r data">5.46</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">AETRTEM</th>
+<th class="rowheader" scope="row">Y</th>
+<td class="r data">1126</td>
+<td class="r data">94.54</td>
+<td class="r data">1191</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX23" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">QS: category and subcategory</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table QSCAT * QSSCAT</h1>
+<article aria-label="LIST Frequencies">
+<h1 class="contentitem toc">LIST Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="LIST Frequencies">
+<caption aria-label="LIST Frequencies"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">QSCAT</th>
+<th class="b header" scope="col">QSSCAT</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">ALZHEIMER&apos;S DISEASE ASSESSMENT SCALE</th>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">12241</td>
+<td class="r data">10.05</td>
+<td class="r data">12241</td>
+<td class="r data">10.05</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">CLINICIAN&apos;S INTERVIEW-BASED IMPRESSION OF CHANGE (CIBIC+)</th>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">562</td>
+<td class="r data">0.46</td>
+<td class="r data">12803</td>
+<td class="r data">10.52</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISABILITY ASSESSMENT FOR DEMENTIA (DAD)</th>
+<th class="rowheader" scope="row">CONTINENCE</th>
+<td class="r data">1646</td>
+<td class="r data">1.35</td>
+<td class="r data">14449</td>
+<td class="r data">11.87</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISABILITY ASSESSMENT FOR DEMENTIA (DAD)</th>
+<th class="rowheader" scope="row">DRESSING</th>
+<td class="r data">4115</td>
+<td class="r data">3.38</td>
+<td class="r data">18564</td>
+<td class="r data">15.25</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISABILITY ASSESSMENT FOR DEMENTIA (DAD)</th>
+<th class="rowheader" scope="row">EATING</th>
+<td class="r data">2469</td>
+<td class="r data">2.03</td>
+<td class="r data">21033</td>
+<td class="r data">17.28</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISABILITY ASSESSMENT FOR DEMENTIA (DAD)</th>
+<th class="rowheader" scope="row">FINANCE AND CORRESPONDE</th>
+<td class="r data">3292</td>
+<td class="r data">2.70</td>
+<td class="r data">24325</td>
+<td class="r data">19.98</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISABILITY ASSESSMENT FOR DEMENTIA (DAD)</th>
+<th class="rowheader" scope="row">GOING ON AN OUTING</th>
+<td class="r data">4115</td>
+<td class="r data">3.38</td>
+<td class="r data">28440</td>
+<td class="r data">23.36</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISABILITY ASSESSMENT FOR DEMENTIA (DAD)</th>
+<th class="rowheader" scope="row">HYGIENE</th>
+<td class="r data">5761</td>
+<td class="r data">4.73</td>
+<td class="r data">34201</td>
+<td class="r data">28.09</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISABILITY ASSESSMENT FOR DEMENTIA (DAD)</th>
+<th class="rowheader" scope="row">LEISURE AND HOUSEWORK</th>
+<td class="r data">4115</td>
+<td class="r data">3.38</td>
+<td class="r data">38316</td>
+<td class="r data">31.47</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISABILITY ASSESSMENT FOR DEMENTIA (DAD)</th>
+<th class="rowheader" scope="row">MEAL PREPARATION</th>
+<td class="r data">2469</td>
+<td class="r data">2.03</td>
+<td class="r data">40785</td>
+<td class="r data">33.50</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISABILITY ASSESSMENT FOR DEMENTIA (DAD)</th>
+<th class="rowheader" scope="row">MEDICATIONS</th>
+<td class="r data">1646</td>
+<td class="r data">1.35</td>
+<td class="r data">42431</td>
+<td class="r data">34.85</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">DISABILITY ASSESSMENT FOR DEMENTIA (DAD)</th>
+<th class="rowheader" scope="row">TELEPHONING</th>
+<td class="r data">3292</td>
+<td class="r data">2.70</td>
+<td class="r data">45723</td>
+<td class="r data">37.56</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">MINI-MENTAL STATE</th>
+<th class="rowheader" scope="row">ATTENTION AND CALCULATI</th>
+<td class="r data">254</td>
+<td class="r data">0.21</td>
+<td class="r data">45977</td>
+<td class="r data">37.76</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">MINI-MENTAL STATE</th>
+<th class="rowheader" scope="row">LANGUAGE</th>
+<td class="r data">254</td>
+<td class="r data">0.21</td>
+<td class="r data">46231</td>
+<td class="r data">37.97</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">MINI-MENTAL STATE</th>
+<th class="rowheader" scope="row">ORIENTATION</th>
+<td class="r data">508</td>
+<td class="r data">0.42</td>
+<td class="r data">46739</td>
+<td class="r data">38.39</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">MINI-MENTAL STATE</th>
+<th class="rowheader" scope="row">RECALL</th>
+<td class="r data">254</td>
+<td class="r data">0.21</td>
+<td class="r data">46993</td>
+<td class="r data">38.60</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">MINI-MENTAL STATE</th>
+<th class="rowheader" scope="row">REGISTRATION</th>
+<td class="r data">254</td>
+<td class="r data">0.21</td>
+<td class="r data">47247</td>
+<td class="r data">38.81</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">MODIFIED HACHINSKI ISCHEMIC SCORE</th>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">3302</td>
+<td class="r data">2.71</td>
+<td class="r data">50549</td>
+<td class="r data">41.52</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NEUROPSYCHIATRIC INVENTORY - REVISED (NPI-X)</th>
+<th class="rowheader" scope="row">ABERRANT MOTOR BEHAVIOR</th>
+<td class="r data">6061</td>
+<td class="r data">4.98</td>
+<td class="r data">56610</td>
+<td class="r data">46.50</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NEUROPSYCHIATRIC INVENTORY - REVISED (NPI-X)</th>
+<th class="rowheader" scope="row">AGITATION/AGRESSION</th>
+<td class="r data">5990</td>
+<td class="r data">4.92</td>
+<td class="r data">62600</td>
+<td class="r data">51.42</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NEUROPSYCHIATRIC INVENTORY - REVISED (NPI-X)</th>
+<th class="rowheader" scope="row">ANXIETY</th>
+<td class="r data">6013</td>
+<td class="r data">4.94</td>
+<td class="r data">68613</td>
+<td class="r data">56.36</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NEUROPSYCHIATRIC INVENTORY - REVISED (NPI-X)</th>
+<th class="rowheader" scope="row">APATHY/INDIFFERENCE</th>
+<td class="r data">6367</td>
+<td class="r data">5.23</td>
+<td class="r data">74980</td>
+<td class="r data">61.59</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NEUROPSYCHIATRIC INVENTORY - REVISED (NPI-X)</th>
+<th class="rowheader" scope="row">APPETITE/EATING CHANGE</th>
+<td class="r data">7882</td>
+<td class="r data">6.47</td>
+<td class="r data">82862</td>
+<td class="r data">68.06</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NEUROPSYCHIATRIC INVENTORY - REVISED (NPI-X)</th>
+<th class="rowheader" scope="row">DELUSIONS</th>
+<td class="r data">5544</td>
+<td class="r data">4.55</td>
+<td class="r data">88406</td>
+<td class="r data">72.61</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NEUROPSYCHIATRIC INVENTORY - REVISED (NPI-X)</th>
+<th class="rowheader" scope="row">DEPRESSION/DYSPHORIA</th>
+<td class="r data">6242</td>
+<td class="r data">5.13</td>
+<td class="r data">94648</td>
+<td class="r data">77.74</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NEUROPSYCHIATRIC INVENTORY - REVISED (NPI-X)</th>
+<th class="rowheader" scope="row">DISINHIBITION</th>
+<td class="r data">5286</td>
+<td class="r data">4.34</td>
+<td class="r data">99934</td>
+<td class="r data">82.08</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NEUROPSYCHIATRIC INVENTORY - REVISED (NPI-X)</th>
+<th class="rowheader" scope="row">EUPHORIA/ELATION</th>
+<td class="r data">4906</td>
+<td class="r data">4.03</td>
+<td class="r data">104840</td>
+<td class="r data">86.11</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NEUROPSYCHIATRIC INVENTORY - REVISED (NPI-X)</th>
+<th class="rowheader" scope="row">HALLUCINATIONS</th>
+<td class="r data">5080</td>
+<td class="r data">4.17</td>
+<td class="r data">109920</td>
+<td class="r data">90.28</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NEUROPSYCHIATRIC INVENTORY - REVISED (NPI-X)</th>
+<th class="rowheader" scope="row">IRRITABILITY/LABILITY</th>
+<td class="r data">6179</td>
+<td class="r data">5.08</td>
+<td class="r data">116099</td>
+<td class="r data">95.36</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NEUROPSYCHIATRIC INVENTORY - REVISED (NPI-X)</th>
+<th class="rowheader" scope="row">NIGHT-TIME BEHAVIOR</th>
+<td class="r data">5650</td>
+<td class="r data">4.64</td>
+<td class="r data">121749</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX24" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">QS: ALZHEIMER-Cog tests (categories containing ALZHEIMER)</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table QSTESTCD * QSTEST</h1>
+<article aria-label="LIST Frequencies">
+<h1 class="contentitem toc">LIST Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="LIST Frequencies">
+<caption aria-label="LIST Frequencies"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">QSTESTCD</th>
+<th class="b header" scope="col">QSTEST</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">ACITM01</th>
+<th class="rowheader" scope="row">WORD RECALL TASK</th>
+<td class="r data">818</td>
+<td class="r data">6.68</td>
+<td class="r data">818</td>
+<td class="r data">6.68</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACITM02</th>
+<th class="rowheader" scope="row">NAMING OBJECTS AND FINGERS (REFER TO 5 C</th>
+<td class="r data">818</td>
+<td class="r data">6.68</td>
+<td class="r data">1636</td>
+<td class="r data">13.36</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACITM03</th>
+<th class="rowheader" scope="row">DELAYED WORD RECALL</th>
+<td class="r data">817</td>
+<td class="r data">6.67</td>
+<td class="r data">2453</td>
+<td class="r data">20.04</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACITM04</th>
+<th class="rowheader" scope="row">COMMANDS</th>
+<td class="r data">818</td>
+<td class="r data">6.68</td>
+<td class="r data">3271</td>
+<td class="r data">26.72</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACITM05</th>
+<th class="rowheader" scope="row">CONSTRUCTIONAL PRAXIS</th>
+<td class="r data">818</td>
+<td class="r data">6.68</td>
+<td class="r data">4089</td>
+<td class="r data">33.40</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACITM06</th>
+<th class="rowheader" scope="row">IDEATIONAL PRAXIS</th>
+<td class="r data">817</td>
+<td class="r data">6.67</td>
+<td class="r data">4906</td>
+<td class="r data">40.08</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACITM07</th>
+<th class="rowheader" scope="row">ORIENTATION</th>
+<td class="r data">818</td>
+<td class="r data">6.68</td>
+<td class="r data">5724</td>
+<td class="r data">46.76</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACITM08</th>
+<th class="rowheader" scope="row">WORD RECOGNITION</th>
+<td class="r data">809</td>
+<td class="r data">6.61</td>
+<td class="r data">6533</td>
+<td class="r data">53.37</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACITM09</th>
+<th class="rowheader" scope="row">ATTENTION/VISUAL SEARCH TASK</th>
+<td class="r data">807</td>
+<td class="r data">6.59</td>
+<td class="r data">7340</td>
+<td class="r data">59.96</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACITM10</th>
+<th class="rowheader" scope="row">MAZE SOLUTION</th>
+<td class="r data">812</td>
+<td class="r data">6.63</td>
+<td class="r data">8152</td>
+<td class="r data">66.60</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACITM11</th>
+<th class="rowheader" scope="row">SPOKEN LANGUAGE ABILITY</th>
+<td class="r data">818</td>
+<td class="r data">6.68</td>
+<td class="r data">8970</td>
+<td class="r data">73.28</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACITM12</th>
+<th class="rowheader" scope="row">COMPREHENSION OF SPOKEN LANGUAGE</th>
+<td class="r data">818</td>
+<td class="r data">6.68</td>
+<td class="r data">9788</td>
+<td class="r data">79.96</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACITM13</th>
+<th class="rowheader" scope="row">WORD FINDING DIFFICULTY IN SPONTANEOUS S</th>
+<td class="r data">818</td>
+<td class="r data">6.68</td>
+<td class="r data">10606</td>
+<td class="r data">86.64</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACITM14</th>
+<th class="rowheader" scope="row">RECALL OF TEST INSTRUCTIONS</th>
+<td class="r data">817</td>
+<td class="r data">6.67</td>
+<td class="r data">11423</td>
+<td class="r data">93.32</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ACTOT</th>
+<th class="rowheader" scope="row">ADAS-COG(11) Subscore</th>
+<td class="r data">818</td>
+<td class="r data">6.68</td>
+<td class="r data">12241</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX25" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">QS: ALZHEIMER-Cog visits and baseline flag</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table VISITNUM * VISIT * QSBLFL</h1>
+<article aria-label="LIST Frequencies">
+<h1 class="contentitem toc">LIST Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="LIST Frequencies">
+<caption aria-label="LIST Frequencies"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="r b header" scope="col">VISITNUM</th>
+<th class="b header" scope="col">VISIT</th>
+<th class="b header" scope="col">QSBLFL</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<th class="rowheader" scope="row">BASELINE</th>
+<th class="rowheader" scope="row">Y</th>
+<td class="r data">3807</td>
+<td class="r data">31.10</td>
+<td class="r data">3807</td>
+<td class="r data">31.10</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<th class="rowheader" scope="row">WEEK 2</th>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">270</td>
+<td class="r data">2.21</td>
+<td class="r data">4077</td>
+<td class="r data">33.31</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<th class="rowheader" scope="row">WEEK 4</th>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">150</td>
+<td class="r data">1.23</td>
+<td class="r data">4227</td>
+<td class="r data">34.53</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<th class="rowheader" scope="row">AMBUL ECG REMOVAL</th>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">30</td>
+<td class="r data">0.25</td>
+<td class="r data">4257</td>
+<td class="r data">34.78</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<th class="rowheader" scope="row">WEEK 6</th>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">239</td>
+<td class="r data">1.95</td>
+<td class="r data">4496</td>
+<td class="r data">36.73</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<th class="rowheader" scope="row">WEEK 8</th>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">2832</td>
+<td class="r data">23.14</td>
+<td class="r data">7328</td>
+<td class="r data">59.86</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<th class="rowheader" scope="row">WEEK 12</th>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">330</td>
+<td class="r data">2.70</td>
+<td class="r data">7658</td>
+<td class="r data">62.56</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<th class="rowheader" scope="row">WEEK 16</th>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">2184</td>
+<td class="r data">17.84</td>
+<td class="r data">9842</td>
+<td class="r data">80.40</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<th class="rowheader" scope="row">WEEK 20</th>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">118</td>
+<td class="r data">0.96</td>
+<td class="r data">9960</td>
+<td class="r data">81.37</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<th class="rowheader" scope="row">WEEK 24</th>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">1734</td>
+<td class="r data">14.17</td>
+<td class="r data">11694</td>
+<td class="r data">95.53</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">201</th>
+<th class="rowheader" scope="row">RETRIEVAL</th>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="r data">547</td>
+<td class="r data">4.47</td>
+<td class="r data">12241</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX26" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">SV: visits</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table VISITNUM * VISIT</h1>
+<article aria-label="LIST Frequencies">
+<h1 class="contentitem toc">LIST Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="LIST Frequencies">
+<caption aria-label="LIST Frequencies"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="r b header" scope="col">VISITNUM</th>
+<th class="b header" scope="col">VISIT</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<th class="rowheader" scope="row">SCREENING 1</th>
+<td class="r data">306</td>
+<td class="r data">8.60</td>
+<td class="r data">306</td>
+<td class="r data">8.60</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1.1</th>
+<th class="rowheader" scope="row">UNSCHEDULED 1.1</th>
+<td class="r data">52</td>
+<td class="r data">1.46</td>
+<td class="r data">358</td>
+<td class="r data">10.06</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1.2</th>
+<th class="rowheader" scope="row">UNSCHEDULED 1.2</th>
+<td class="r data">11</td>
+<td class="r data">0.31</td>
+<td class="r data">369</td>
+<td class="r data">10.37</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1.3</th>
+<th class="rowheader" scope="row">UNSCHEDULED 1.3</th>
+<td class="r data">2</td>
+<td class="r data">0.06</td>
+<td class="r data">371</td>
+<td class="r data">10.42</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<th class="rowheader" scope="row">SCREENING 2</th>
+<td class="r data">254</td>
+<td class="r data">7.14</td>
+<td class="r data">625</td>
+<td class="r data">17.56</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<th class="rowheader" scope="row">BASELINE</th>
+<td class="r data">254</td>
+<td class="r data">7.14</td>
+<td class="r data">879</td>
+<td class="r data">24.70</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3.1</th>
+<th class="rowheader" scope="row">UNSCHEDULED 3.1</th>
+<td class="r data">1</td>
+<td class="r data">0.03</td>
+<td class="r data">880</td>
+<td class="r data">24.73</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3.5</th>
+<th class="rowheader" scope="row">AMBUL ECG PLACEMENT</th>
+<td class="r data">208</td>
+<td class="r data">5.84</td>
+<td class="r data">1088</td>
+<td class="r data">30.57</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<th class="rowheader" scope="row">WEEK 2</th>
+<td class="r data">254</td>
+<td class="r data">7.14</td>
+<td class="r data">1342</td>
+<td class="r data">37.71</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4.1</th>
+<th class="rowheader" scope="row">UNSCHEDULED 4.1</th>
+<td class="r data">8</td>
+<td class="r data">0.22</td>
+<td class="r data">1350</td>
+<td class="r data">37.93</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4.2</th>
+<th class="rowheader" scope="row">UNSCHEDULED 4.2</th>
+<td class="r data">2</td>
+<td class="r data">0.06</td>
+<td class="r data">1352</td>
+<td class="r data">37.99</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<th class="rowheader" scope="row">WEEK 4</th>
+<td class="r data">228</td>
+<td class="r data">6.41</td>
+<td class="r data">1580</td>
+<td class="r data">44.39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5.1</th>
+<th class="rowheader" scope="row">UNSCHEDULED 5.1</th>
+<td class="r data">10</td>
+<td class="r data">0.28</td>
+<td class="r data">1590</td>
+<td class="r data">44.68</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<th class="rowheader" scope="row">AMBUL ECG REMOVAL</th>
+<td class="r data">203</td>
+<td class="r data">5.70</td>
+<td class="r data">1793</td>
+<td class="r data">50.38</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6.1</th>
+<th class="rowheader" scope="row">UNSCHEDULED 6.1</th>
+<td class="r data">1</td>
+<td class="r data">0.03</td>
+<td class="r data">1794</td>
+<td class="r data">50.41</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<th class="rowheader" scope="row">WEEK 6</th>
+<td class="r data">213</td>
+<td class="r data">5.98</td>
+<td class="r data">2007</td>
+<td class="r data">56.39</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7.1</th>
+<th class="rowheader" scope="row">UNSCHEDULED 7.1</th>
+<td class="r data">3</td>
+<td class="r data">0.08</td>
+<td class="r data">2010</td>
+<td class="r data">56.48</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<th class="rowheader" scope="row">WEEK 8</th>
+<td class="r data">190</td>
+<td class="r data">5.34</td>
+<td class="r data">2200</td>
+<td class="r data">61.82</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8.1</th>
+<th class="rowheader" scope="row">WEEK 10 (T)</th>
+<td class="r data">156</td>
+<td class="r data">4.38</td>
+<td class="r data">2356</td>
+<td class="r data">66.20</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8.2</th>
+<th class="rowheader" scope="row">UNSCHEDULED 8.2</th>
+<td class="r data">5</td>
+<td class="r data">0.14</td>
+<td class="r data">2361</td>
+<td class="r data">66.34</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<th class="rowheader" scope="row">WEEK 12</th>
+<td class="r data">174</td>
+<td class="r data">4.89</td>
+<td class="r data">2535</td>
+<td class="r data">71.23</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9.1</th>
+<th class="rowheader" scope="row">WEEK 14 (T)</th>
+<td class="r data">141</td>
+<td class="r data">3.96</td>
+<td class="r data">2676</td>
+<td class="r data">75.19</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9.2</th>
+<th class="rowheader" scope="row">UNSCHEDULED 9.2</th>
+<td class="r data">10</td>
+<td class="r data">0.28</td>
+<td class="r data">2686</td>
+<td class="r data">75.47</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9.3</th>
+<th class="rowheader" scope="row">UNSCHEDULED 9.3</th>
+<td class="r data">2</td>
+<td class="r data">0.06</td>
+<td class="r data">2688</td>
+<td class="r data">75.53</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<th class="rowheader" scope="row">WEEK 16</th>
+<td class="r data">147</td>
+<td class="r data">4.13</td>
+<td class="r data">2835</td>
+<td class="r data">79.66</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10.1</th>
+<th class="rowheader" scope="row">WEEK 18 (T)</th>
+<td class="r data">124</td>
+<td class="r data">3.48</td>
+<td class="r data">2959</td>
+<td class="r data">83.14</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10.2</th>
+<th class="rowheader" scope="row">UNSCHEDULED 10.2</th>
+<td class="r data">3</td>
+<td class="r data">0.08</td>
+<td class="r data">2962</td>
+<td class="r data">83.23</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<th class="rowheader" scope="row">WEEK 20</th>
+<td class="r data">132</td>
+<td class="r data">3.71</td>
+<td class="r data">3094</td>
+<td class="r data">86.93</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11.1</th>
+<th class="rowheader" scope="row">WEEK 22 (T)</th>
+<td class="r data">112</td>
+<td class="r data">3.15</td>
+<td class="r data">3206</td>
+<td class="r data">90.08</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11.2</th>
+<th class="rowheader" scope="row">UNSCHEDULED 11.2</th>
+<td class="r data">4</td>
+<td class="r data">0.11</td>
+<td class="r data">3210</td>
+<td class="r data">90.19</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<th class="rowheader" scope="row">WEEK 24</th>
+<td class="r data">118</td>
+<td class="r data">3.32</td>
+<td class="r data">3328</td>
+<td class="r data">93.51</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12.1</th>
+<th class="rowheader" scope="row">UNSCHEDULED 12.1</th>
+<td class="r data">6</td>
+<td class="r data">0.17</td>
+<td class="r data">3334</td>
+<td class="r data">93.68</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">13</th>
+<th class="rowheader" scope="row">WEEK 26</th>
+<td class="r data">111</td>
+<td class="r data">3.12</td>
+<td class="r data">3445</td>
+<td class="r data">96.80</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">13.1</th>
+<th class="rowheader" scope="row">UNSCHEDULED 13.1</th>
+<td class="r data">2</td>
+<td class="r data">0.06</td>
+<td class="r data">3447</td>
+<td class="r data">96.85</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">101</th>
+<th class="rowheader" scope="row">AE FOLLOW-UP</th>
+<td class="r data">74</td>
+<td class="r data">2.08</td>
+<td class="r data">3521</td>
+<td class="r data">98.93</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">201</th>
+<th class="rowheader" scope="row">RETRIEVAL</th>
+<td class="r data">38</td>
+<td class="r data">1.07</td>
+<td class="r data">3559</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Print" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX27" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">TA: trial arms</span> </p>
+</div>
+<h1 class="contentprocname toc">The Print Procedure</h1>
+<article aria-label="Data Set SDTM.TA">
+<h1 class="contentitem toc">Data Set SDTM.TA</h1>
+<table class="table" style="border-spacing: 0" aria-label="Data Set SDTM.TA">
+<caption aria-label="Data Set SDTM.TA"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="header" scope="col">STUDYID</th>
+<th class="header" scope="col">DOMAIN</th>
+<th class="header" scope="col">ARMCD</th>
+<th class="header" scope="col">ARM</th>
+<th class="r header" scope="col">TAETORD</th>
+<th class="header" scope="col">ETCD</th>
+<th class="header" scope="col">ELEMENT</th>
+<th class="header" scope="col">TABRANCH</th>
+<th class="header" scope="col">TATRANS</th>
+<th class="header" scope="col">EPOCH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TA</td>
+<td class="data">Pbo</td>
+<td class="data">Placebo</td>
+<td class="r data">1</td>
+<td class="data">SCRN</td>
+<td class="data">Screen</td>
+<td class="data">Randomized to Placebo</td>
+<td class="data"> &#160;</td>
+<td class="data">Screening</td>
+</tr>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TA</td>
+<td class="data">Pbo</td>
+<td class="data">Placebo</td>
+<td class="r data">2</td>
+<td class="data">PBO</td>
+<td class="data">Placebo</td>
+<td class="data"> &#160;</td>
+<td class="data"> &#160;</td>
+<td class="data">Treatment</td>
+</tr>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TA</td>
+<td class="data">Xan_Hi</td>
+<td class="data">Xanomeline High Dose</td>
+<td class="r data">1</td>
+<td class="data">SCRN</td>
+<td class="data">Screen</td>
+<td class="data">Randomized to High Dose</td>
+<td class="data"> &#160;</td>
+<td class="data">Screening</td>
+</tr>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TA</td>
+<td class="data">Xan_Hi</td>
+<td class="data">Xanomeline High Dose</td>
+<td class="r data">2</td>
+<td class="data">HIS</td>
+<td class="data">High_Start</td>
+<td class="data"> &#160;</td>
+<td class="data"> &#160;</td>
+<td class="data">Treatment</td>
+</tr>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TA</td>
+<td class="data">Xan_Hi</td>
+<td class="data">Xanomeline High Dose</td>
+<td class="r data">3</td>
+<td class="data">HIM</td>
+<td class="data">High_Middle</td>
+<td class="data"> &#160;</td>
+<td class="data"> &#160;</td>
+<td class="data">Treatment</td>
+</tr>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TA</td>
+<td class="data">Xan_Hi</td>
+<td class="data">Xanomeline High Dose</td>
+<td class="r data">4</td>
+<td class="data">HIE</td>
+<td class="data">High_End</td>
+<td class="data"> &#160;</td>
+<td class="data"> &#160;</td>
+<td class="data">Treatment</td>
+</tr>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TA</td>
+<td class="data">Xan_Lo</td>
+<td class="data">Xanomeline Low Dose</td>
+<td class="r data">1</td>
+<td class="data">SCRN</td>
+<td class="data">Screen</td>
+<td class="data">Randomized to Low Dose</td>
+<td class="data"> &#160;</td>
+<td class="data">Screening</td>
+</tr>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TA</td>
+<td class="data">Xan_Lo</td>
+<td class="data">Xanomeline Low Dose</td>
+<td class="r data">2</td>
+<td class="data">LO</td>
+<td class="data">Low</td>
+<td class="data"> &#160;</td>
+<td class="data"> &#160;</td>
+<td class="data">Treatment</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="Print" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX28" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">TE: trial elements</span> </p>
+</div>
+<h1 class="contentprocname toc">The Print Procedure</h1>
+<article aria-label="Data Set SDTM.TE">
+<h1 class="contentitem toc">Data Set SDTM.TE</h1>
+<table class="table" style="border-spacing: 0" aria-label="Data Set SDTM.TE">
+<caption aria-label="Data Set SDTM.TE"></caption>
+<colgroup><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="header" scope="col">STUDYID</th>
+<th class="header" scope="col">DOMAIN</th>
+<th class="header" scope="col">ETCD</th>
+<th class="header" scope="col">ELEMENT</th>
+<th class="header" scope="col">TESTRL</th>
+<th class="header" scope="col">TEENRL</th>
+<th class="header" scope="col">TEDUR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TE</td>
+<td class="data">FOLO</td>
+<td class="data">Follow_up</td>
+<td class="data">End of last scheduled visit on study (including early termination)</td>
+<td class="data">Completion of all specified followup activities (which vary on a patient-by-patient basis)</td>
+<td class="data"> &#160;</td>
+</tr>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TE</td>
+<td class="data">HIE</td>
+<td class="data">High_End</td>
+<td class="data">Administration of first dose (from patches supplied at Visit 12)</td>
+<td class="data"> &#160;</td>
+<td class="data">P2W</td>
+</tr>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TE</td>
+<td class="data">HIM</td>
+<td class="data">High_Middle</td>
+<td class="data">Administration of first dose (from patches supplied at Visit 4)</td>
+<td class="data"> &#160;</td>
+<td class="data">P22W</td>
+</tr>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TE</td>
+<td class="data">HIS</td>
+<td class="data">High_Start</td>
+<td class="data">Administration of first dose</td>
+<td class="data"> &#160;</td>
+<td class="data">P2W</td>
+</tr>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TE</td>
+<td class="data">LO</td>
+<td class="data">Low</td>
+<td class="data">Administration of first dose</td>
+<td class="data"> &#160;</td>
+<td class="data">P26W</td>
+</tr>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TE</td>
+<td class="data">PBO</td>
+<td class="data">Placebo</td>
+<td class="data">Administration of first dose</td>
+<td class="data"> &#160;</td>
+<td class="data">P26W</td>
+</tr>
+<tr>
+<td class="data">CDISCPILOT01</td>
+<td class="data">TE</td>
+<td class="data">SCRN</td>
+<td class="data">Screen</td>
+<td class="data">Informed consent</td>
+<td class="data">Completion of all screening activities and no more than 2 weeks from informed consent</td>
+<td class="data"> &#160;</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="SQL" data-sec-type="proc">
+<hr class="pagebreak"/>
+<div id="IDX29" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">Date completeness: missing, partial (&lt;10 chars), with time (&gt;10 chars)</span> </p>
+</div>
+<h1 class="contentprocname toc">The SQL Procedure</h1>
+<article aria-label="Query Results">
+<h1 class="contentitem toc">Query Results</h1>
+<table class="table" style="border-spacing: 0" aria-label="Query Results">
+<caption aria-label="Query Results"></caption>
+<colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">variable</th>
+<th class="r b header" scope="col">n_missing</th>
+<th class="r b header" scope="col">n_partial</th>
+<th class="r b header" scope="col">n_with_time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data">DM.RFSTDTC</td>
+<td class="r data">52</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<td class="data">DM.RFXSTDTC</td>
+<td class="r data">52</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<td class="data">DM.RFXENDTC</td>
+<td class="r data">54</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<td class="data">DM.RFENDTC</td>
+<td class="r data">52</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<td class="data">AE.AESTDTC</td>
+<td class="r data">0</td>
+<td class="r data">26</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<td class="data">AE.AEENDTC</td>
+<td class="r data">473</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<td class="data">DS.DSSTDTC</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<td class="data">EX.EXSTDTC</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+<tr>
+<td class="data">EX.EXENDTC</td>
+<td class="r data">6</td>
+<td class="r data">0</td>
+<td class="r data">0</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</div>
+</body>
+</html>
