@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html class="ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="SAS 9.4" name="generator"/>
+<title>Results: 92_qc_adtte.sas</title>
+<style>
+/*<![CDATA[*/
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.c section > table, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.c section > pre, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.c div > table,
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.c div > pre, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.c article > table, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.c article > pre,
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.j section > table, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.j section > pre, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.j div > table,
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.j div > pre, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.j article > table, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.j article > pre,
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.c p.note, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.c p.warning, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.c p.error, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.c p.fatal,
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.j p.note, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.j p.warning, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.j p.error, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.j p.fatal,
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.c > table.layoutcontainer, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.l table, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.l pre, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.l p.note,
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.l p.warning, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.l p.error, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.l p.fatal { margin-left: 0 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.c table, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.c pre, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.c p.note,
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.c p.warning, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.c p.error, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.r table, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.r pre, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.r p.note,
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.r table, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.r pre, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.r p.note,
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.r p.warning, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.r p.error, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion.r p.fatal { margin-right: 0 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 article, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 aside, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 details, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 figcaption, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 figure, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 footer, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 header, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 hgroup, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 nav, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 section { display: block }
+html.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 { font-size: 100% }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body { margin: 1em; font-size: 13px; line-height: 1.231 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 ul, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 ol { margin: 1em 0; padding: 0 0 0 40px }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 dd { margin: 0 0 0 40px }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 nav ul, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 img { border: 0; vertical-align: middle }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 svg:not(:root) { overflow: hidden }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 figure { margin: 0 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 table { border-collapse: collapse; border-spacing: 0 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutcontainer { border-collapse: separate; border-spacing: 0 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 p { margin-top: 0; text-align: left }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 h1.heading1 { text-align: left }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 h2.heading2 { text-align: left }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 h3.heading3 { text-align: left }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 h4.heading4 { text-align: left }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 h5.heading5 { text-align: left }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 h6.heading6 { text-align: left }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 span { text-align: left }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 table { margin-bottom: 1em }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 td, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 th { text-align: left; padding: 3px 6px; vertical-align: top }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 td[class$="fixed"], .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 th[class$="fixed"] { white-space: pre }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 section, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 article { padding-top: 1px; padding-bottom: 8px }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .stacked-value { text-align: left; display: block }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .stacked-cell > .stacked-value, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 td.data > td.data, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 th.data > td.data, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 th.data > th.data, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 td.data > th.data, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 th.header > th.header { border: 0 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .stacked-cell > div.data { border-width: 0 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systitleandfootercontainer > p { margin: 0 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .batch { display: table }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .toc { display: none }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .proc_note_group, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .proc_title_group { margin-bottom: 1em }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 p.proctitle { margin: 0 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 p.note, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 p.warning, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 p.error, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 p.fatal { display: table }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .notebanner, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .warnbanner, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .errorbanner, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .fatalbanner,
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .notecontent, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .warncontent, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .errorcontent, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .fatalcontent { display: table-cell; padding: 0.5em }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .notebanner, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .warnbanner, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .errorbanner, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .fatalbanner { padding-right: 0 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body > div > ol li { text-align: left }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .c { text-align: center }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .r { text-align: right }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .l { text-align: left }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .j { text-align: justify }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .d { text-align: right }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .b { vertical-align: bottom }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .m { vertical-align: middle }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .t { vertical-align: top }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .accessiblecaption {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 a:active { color: #800080 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .batch > tbody, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .batch > thead, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .batch { border: hidden; }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .bylinecontainer > col, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .bylinecontainer > colgroup > col, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .bylinecontainer > colgroup, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .bylinecontainer > tr, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .bylinecontainer > * > tr, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .bylinecontainer > thead, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .bylinecontainer > tbody, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .bylinecontainer > tfoot { border: none; }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .cell, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .contentfolder, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .contentproclabel, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .data, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .graph > tbody, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .graph > thead, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .graph { border: hidden; }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .heading1, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .heading2, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .heading3, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .heading4, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .heading5, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .heading6 { font-family: Arial, Helvetica, sans-serif }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .indexaction, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutcontainer, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 a:link { color: #0000ff }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .list3, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .list4, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .list5, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .list6, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .list7, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .list8, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .listitem3, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .listitem4, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .listitem5, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .listitem6, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .listitem7, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .listitem8, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .output > tbody, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .output > thead, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .output { border: hidden; }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .pagesproclabel, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .parskip > col, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .parskip > colgroup > col, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .parskip > colgroup, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .parskip > tr, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .parskip > * > tr, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .parskip > thead, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .parskip > tbody, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .parskip > tfoot { border: none; }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemfooter, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemfooter10, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemfooter2, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemfooter3, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemfooter4, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemfooter5, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemfooter6, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemfooter7, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemfooter8, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemtitle, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemtitle10, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemtitle2, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemtitle3, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemtitle4, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemtitle5, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemtitle6, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemtitle7, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemtitle8, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systitleandfootercontainer > col, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systitleandfootercontainer > colgroup > col, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systitleandfootercontainer > colgroup, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systitleandfootercontainer > tr, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systitleandfootercontainer > * > tr, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systitleandfootercontainer > thead, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systitleandfootercontainer > tbody, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systitleandfootercontainer > tfoot { border: none; }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .table > col, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .table > tr, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .table { border: hidden; }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .titleandnotecontainer > col, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .titleandnotecontainer > colgroup > col, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .titleandnotecontainer > colgroup, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .titleandnotecontainer > tr, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .titleandnotecontainer > * > tr, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .titleandnotecontainer > thead, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .titleandnotecontainer > tbody, .ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .titleandnotecontainer > tfoot { border: none; }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 a:visited { color: #800080 }
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228 .warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+</head>
+<body class="body">
+<div id="div_a25aa8b3-0e8c-44c4-8d7d-674cdbdd4228" class="c body">
+<h1 class="body toc">Results: 92_qc_adtte.sas</h1>
+<section data-name="Compare" data-sec-type="proc">
+<div id="IDX" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">ADTTE QC: derived ADAM.ADTTE (compare) vs PHUSE reference ADTTE (base)</span> </p>
+</div>
+<h1 class="contentprocname toc">The Compare Procedure</h1>
+<article aria-label="Datasets">
+<h1 class="contentitem toc">Datasets</h1>
+<pre class="batch" style="border-spacing: 1px">
+                                                       The COMPARE Procedure                                                        
+                                          Comparison of WORK.ADTTE_REF with WORK.ADTTE_NEW                                          
+                                               (Method=ABSOLUTE, Criterion=0.000001)                                                
+                                                                                                                                    
+                                                         Data Set Summary                                                           
+                                                                                                                                    
+                                  Dataset                  Created          Modified  NVar    NObs                                  
+                                                                                                                                    
+                                  WORK.ADTTE_REF  15NOV26:16:25:40  15NOV26:16:25:40    26     254                                  
+                                  WORK.ADTTE_NEW  15NOV26:16:25:40  15NOV26:16:25:40    26     254                                  
+                                                                                                                                    
+                                                                                                                                    
+                                                         Variables Summary                                                          
+                                                                                                                                    
+                                         Number of Variables in Common: 26.                                                         
+                                         Number of Variables with Differing Attributes: 7.                                          
+                                         Number of ID Variables: 1.                                                                 
+</pre>
+</article>
+<article id="IDX1" aria-label="Variables">
+<h1 class="contentitem toc">Variables</h1>
+<pre class="batch" style="border-spacing: 1px">
+                                                                                                                                    
+                                                                                                                                    
+                                       Listing of Common Variables with Differing Attributes                                        
+                                                                                                                                    
+                           Variable  Dataset         Type  Length  Format  Label                                                    
+                                                                                                                                    
+                           AGE       WORK.ADTTE_REF  Num        8  3.      Age                                                      
+                                     WORK.ADTTE_NEW  Num        8          Age                                                      
+                           AGEGR1N   WORK.ADTTE_REF  Num        8  3.      Pooled Age Group 1 (N)                                   
+                                     WORK.ADTTE_NEW  Num        8          Pooled Age Group 1 (N)                                   
+                           RACE      WORK.ADTTE_REF  Char      32          Race                                                     
+                                     WORK.ADTTE_NEW  Char      78          Race                                                     
+                           RACEN     WORK.ADTTE_REF  Num        8  3.      Race (N)                                                 
+                                     WORK.ADTTE_NEW  Num        8          Race (N)                                                 
+                           TRTDUR    WORK.ADTTE_REF  Num        8  3.      Duration of treatment (days)                             
+                                     WORK.ADTTE_NEW  Num        8          Duration of Treatment (days)                             
+                           PARAM     WORK.ADTTE_REF  Char     100          Parameter Description                                    
+                                     WORK.ADTTE_NEW  Char      40          Parameter Description                                    
+                           EVNTDESC  WORK.ADTTE_REF  Char      25          Event or Censoring Description                           
+                                     WORK.ADTTE_NEW  Char      40          Event or Censoring Description                           
+</pre>
+</article>
+<article id="IDX2" aria-label="Summary">
+<h1 class="contentitem toc">Summary</h1>
+<pre class="batch" style="border-spacing: 1px">
+                                                                                                                                    
+                                                                                                                                    
+                                                        Observation Summary                                                         
+                                                                                                                                    
+                                           Observation      Base  Compare  ID                                                       
+                                                                                                                                    
+                                           First Obs           1        1  USUBJID=01-701-1015                                      
+                                           First Unequal       1        1  USUBJID=01-701-1015                                      
+                                           Last  Unequal     254      254  USUBJID=01-718-1427                                      
+                                           Last  Obs         254      254  USUBJID=01-718-1427                                      
+                                                                                                                                    
+                                 Number of Observations in Common: 254.                                                             
+                                 Total Number of Observations Read from WORK.ADTTE_REF: 254.                                        
+                                 Total Number of Observations Read from WORK.ADTTE_NEW: 254.                                        
+                                                                                                                                    
+                                 Number of Observations with Some Compared Variables Unequal: 152.                                  
+                                 Number of Observations with All Compared Variables Equal: 102.                                     
+</pre>
+<hr class="pagebreak"/>
+<div id="IDX3" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">ADTTE QC: derived ADAM.ADTTE (compare) vs PHUSE reference ADTTE (base)</span> </p>
+</div>
+<pre class="batch" style="border-spacing: 1px">
+                                                       The COMPARE Procedure                                                        
+                                          Comparison of WORK.ADTTE_REF with WORK.ADTTE_NEW                                          
+                                               (Method=ABSOLUTE, Criterion=0.000001)                                                
+                                                                                                                                    
+                                                     Values Comparison Summary                                                      
+                                                                                                                                    
+                                  Number of Variables Compared with All Observations Equal: 24.                                     
+                                  Number of Variables Compared with Some Observations Unequal: 1.                                   
+                                  Total Number of Values which Compare Unequal: 152.                                                
+                                  Maximum Difference: 0.                                                                            
+                                                                                                                                    
+                                                                                                                                    
+                                                   Variables with Unequal Values                                                    
+                                                                                                                                    
+                            Variable  Type  Len1 Len2   Label                           Ndif   MaxDif                               
+                                                                                                                                    
+                            EVNTDESC  CHAR    25   40   Event or Censoring Description   152                                        
+                                                                                                                                    
+</pre>
+</article>
+<article id="IDX4" aria-label="Differences">
+<h1 class="contentitem toc">Differences</h1>
+<pre class="batch" style="border-spacing: 1px">
+                                                                                                                                    
+                                                                                                                                    
+                                               Value Comparison Results for Variables                                               
+                                                                                                                                    
+                                   _____________________________________________________________                                    
+                                                 ||  Event or Censoring Description                                                 
+                                                 ||  Base Value           Compare Value                                             
+                                    USUBJID      ||  EVNTDESC              evntdesc                                                 
+                                    ___________  ||  ___________________+  ___________________+                                     
+                                                 ||                                                                                 
+                                    01-701-1015  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1023  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1028  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1034  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1097  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1115  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1130  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1133  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1146  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1148  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1180  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1188  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1192  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1211  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1239  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1275  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1287  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1294  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1302  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1317  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1324  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1341  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1360  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1363  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1383  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1442  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-701-1444  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-702-1082  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-703-1076  ||  Dematologic Event Oc  Dermatologic Event O                                     
+</pre>
+<hr class="pagebreak"/>
+<div id="IDX5" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">ADTTE QC: derived ADAM.ADTTE (compare) vs PHUSE reference ADTTE (base)</span> </p>
+</div>
+<pre class="batch" style="border-spacing: 1px">
+                                                       The COMPARE Procedure                                                        
+                                          Comparison of WORK.ADTTE_REF with WORK.ADTTE_NEW                                          
+                                               (Method=ABSOLUTE, Criterion=0.000001)                                                
+                                                                                                                                    
+                                               Value Comparison Results for Variables                                               
+                                                                                                                                    
+                                   _____________________________________________________________                                    
+                                                 ||  Event or Censoring Description                                                 
+                                                 ||  Base Value           Compare Value                                             
+                                    USUBJID      ||  EVNTDESC              evntdesc                                                 
+                                    ___________  ||  ___________________+  ___________________+                                     
+                                                 ||                                                                                 
+                                    01-703-1086  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-703-1100  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-703-1119  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-703-1182  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-703-1258  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-703-1439  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-704-1009  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-704-1017  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-704-1065  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-704-1074  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-704-1093  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-704-1114  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-704-1120  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-704-1135  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-704-1266  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-704-1323  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-704-1325  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-704-1332  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-705-1031  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-705-1059  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-705-1280  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-705-1281  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-705-1292  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-705-1303  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-705-1310  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-706-1041  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-706-1384  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-708-1032  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-708-1158  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-708-1178  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-708-1216  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-708-1272  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-708-1286  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-708-1296  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-708-1297  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-708-1316  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-708-1336  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-708-1347  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-708-1348  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-708-1428  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1007  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1020  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1029  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1081  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1088  ||  Dematologic Event Oc  Dermatologic Event O                                     
+</pre>
+<hr class="pagebreak"/>
+<div id="IDX6" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">ADTTE QC: derived ADAM.ADTTE (compare) vs PHUSE reference ADTTE (base)</span> </p>
+</div>
+<pre class="batch" style="border-spacing: 1px">
+                                                       The COMPARE Procedure                                                        
+                                          Comparison of WORK.ADTTE_REF with WORK.ADTTE_NEW                                          
+                                               (Method=ABSOLUTE, Criterion=0.000001)                                                
+                                                                                                                                    
+                                               Value Comparison Results for Variables                                               
+                                                                                                                                    
+                                   _____________________________________________________________                                    
+                                                 ||  Event or Censoring Description                                                 
+                                                 ||  Base Value           Compare Value                                             
+                                    USUBJID      ||  EVNTDESC              evntdesc                                                 
+                                    ___________  ||  ___________________+  ___________________+                                     
+                                                 ||                                                                                 
+                                    01-709-1099  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1102  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1168  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1217  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1238  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1285  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1306  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1309  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1312  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-709-1326  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1006  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1021  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1045  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1053  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1060  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1070  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1077  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1137  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1154  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1187  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1235  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1249  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1264  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1270  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1278  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1300  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1315  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1354  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1358  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1385  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-710-1408  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-711-1012  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-711-1143  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-713-1043  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-713-1073  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-713-1141  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-713-1209  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-713-1256  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-713-1269  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-713-1448  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-714-1068  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-714-1195  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-714-1288  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-714-1375  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-715-1107  ||  Dematologic Event Oc  Dermatologic Event O                                     
+</pre>
+<hr class="pagebreak"/>
+<div id="IDX7" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">ADTTE QC: derived ADAM.ADTTE (compare) vs PHUSE reference ADTTE (base)</span> </p>
+</div>
+<pre class="batch" style="border-spacing: 1px">
+                                                       The COMPARE Procedure                                                        
+                                          Comparison of WORK.ADTTE_REF with WORK.ADTTE_NEW                                          
+                                               (Method=ABSOLUTE, Criterion=0.000001)                                                
+                                                                                                                                    
+                                               Value Comparison Results for Variables                                               
+                                                                                                                                    
+                                   _____________________________________________________________                                    
+                                                 ||  Event or Censoring Description                                                 
+                                                 ||  Base Value           Compare Value                                             
+                                    USUBJID      ||  EVNTDESC              evntdesc                                                 
+                                    ___________  ||  ___________________+  ___________________+                                     
+                                                 ||                                                                                 
+                                    01-715-1321  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1026  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1063  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1103  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1108  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1151  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1157  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1160  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1167  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1189  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1229  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1298  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1308  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1311  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1364  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1373  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1418  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1441  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-716-1447  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-717-1004  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-717-1109  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-717-1174  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-717-1201  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-717-1357  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-717-1446  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-718-1079  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-718-1150  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-718-1250  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-718-1254  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-718-1328  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-718-1355  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-718-1371  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                    01-718-1427  ||  Dematologic Event Oc  Dermatologic Event O                                     
+                                   _____________________________________________________________                                    
+</pre>
+</article>
+</section>
+</div>
+</body>
+</html>
