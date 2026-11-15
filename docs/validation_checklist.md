@@ -10,7 +10,8 @@ Complete one section per program after each run. Save the log in `logs/` with th
 | 00_explore_sdtm.sas | 2026-11-15 | Yes (logs/00_explore_sdtm_log.html, run 2) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
 | 01_adsl.sas | 2026-11-15 | Yes (logs/01_adsl_log.html) | Yes | Yes | Yes | Yes | rushadnihal / Claude | |
 | 90_qc_adsl.sas | 2026-11-15 | Yes (logs/90_qc_adsl_log.html) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
-| 02_adae.sas | | | | | | | |
+| 02_adae.sas | 2026-11-15 | Yes (logs/02_adae_log.html) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
+| 91_qc_adae.sas | 2026-11-15 | Yes (logs/91_qc_adae_log.html) | Yes | Yes | Yes | Yes | rushadnihal / Claude | |
 | 03_adtte.sas | | | | | | | |
 | 04_tables.sas | | | | | | | |
 | 05_km_cox.sas | | | | | | | |
@@ -21,7 +22,7 @@ Complete one section per program after each run. Save the log in `logs/` with th
 | Dataset | One record per expected key | Subject count matches SDTM | Variable names, labels, types per spec | No unexpected missing values | Derivations spot-checked |
 |---|---|---|---|---|---|
 | ADSL | Yes (254 rows, 254 subjects) | Yes (254 randomized; 52 screen failures excluded by design) | Yes (labels and lengths per docs/adsl_spec.md; 48 variables) | Only expected: 1 subject without baseline weight/BMI | Yes: flag, dose, disposition, site and group counts match PHUSE ADSL; see 01_adsl_results.html |
-| ADAE | | | | | |
+| ADAE | Yes (1,191 records, unique USUBJID+AESEQ) | Yes (225 subjects with AEs, all in ADSL) | Yes (55 variables per docs/adae_spec.md) | Only expected: 473 missing end dates, 11 year-only start dates | Yes: TEAE 1,126, dermatologic 493, first dermatologic TEAE 152 |
 | ADTTE | | | | | |
 
 ## QC against PHUSE ADaM reference (PROC COMPARE)
@@ -29,7 +30,7 @@ Complete one section per program after each run. Save the log in `logs/` with th
 | Dataset | Compare run | Differences found | Explanation / resolution |
 |---|---|---|---|
 | ADSL | 2026-11-15 (docs/90_qc_adsl_results.html) | 1 value: BMIBLGR1 for 01-702-1082 (reference `<25`, derived blank). Attribute differences only: lengths of AGEU, RACE, ETHNIC, RFSTDTC, RFENDTC. | Expected and documented in docs/adsl_spec.md: subject has no baseline weight, so BMI is missing and no group is assigned. 253 of 254 records match on all 48 variables. |
-| ADAE | | | |
+| ADAE | 2026-11-15 (docs/91_qc_adae_results.html) | None: all 1,191 records equal on all 55 variables. Attribute differences only: character lengths of RACE, AETERM, AELLT, AEDECOD, AEHLT, AEHLGT, AESOC, AEACN, AEOUT. | Lengths follow the SDTM source here; the reference uses shorter lengths. No values affected. |
 | ADTTE | | | |
 
 ## Output checks
