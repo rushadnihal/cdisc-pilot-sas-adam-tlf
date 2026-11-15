@@ -15,7 +15,7 @@ Complete one section per program after each run. Save the log in `logs/` with th
 | 03_adtte.sas | 2026-11-15 | Yes (logs/03_adtte_log.html, run 2) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
 | 92_qc_adtte.sas | 2026-11-15 | Yes (logs/92_qc_adtte_log.html, run 2) | Yes | Yes | Yes | Yes | rushadnihal / Claude | |
 | 04_tables.sas | 2026-11-15 | Yes (logs/04_tables_log.html, run 3) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
-| 05_km_cox.sas | | | | | | | |
+| 05_km_cox.sas | 2026-11-15 | Yes (logs/05_km_cox_log.html, run 3) | Yes | Yes | Yes | Yes | rushadnihal / Claude |
 | 06_mixed_model.sas | | | | | | | |
 
 ## Dataset checks
@@ -58,3 +58,5 @@ Complete one section per program after each run. Save the log in `logs/` with th
 - **03_adtte.sas / 92_qc_adtte.sas, run 1:** `03_adtte.sas` had 2 errors from check 4 (a PROC SQL query with no FROM clause on the outer select); the ADTTE dataset itself was created correctly before the error. `92_qc_adtte.sas` had ERROR 180-322 because only the program's file name had been pasted into the editor, so nothing ran. Both were re-run (run 2) after fixing check 4 and pasting the full QC program: 0 errors, 0 warnings. Run 1 logs were not kept.
 
 - **04_tables.sas, runs 1 to 3:** runs 1 and 2 had errors caused by an incomplete copy of the program in the editor (the paste stopped partway through the Table 1 section, and a leftover half line then broke the `%flagrow` call), not by program logic. Run 3, using the uploaded complete file, had 0 errors and 0 warnings but the log showed five "variable is uninitialized" notes from `%init`, and Table 2 rows were out of order (PROC REPORT sorts an ORDER variable by formatted value by default). Both were fixed (`call missing` in `%init`, `order=internal` in `%rpt`) and the program was re-run. The saved log, results and RTF are from that last run: 0 errors, 0 warnings, no uninitialized variables, no merge notes. The only unusual notes are 7 Cartesian product notes from the intended zero-fill cross join in `%catrows`. Earlier run logs were not kept.
+
+- **05_km_cox.sas, runs 1 to 3:** run 1 was clean (0 errors, 0 warnings) and all numbers matched the independent calculation, but the strata sorted alphabetically (Placebo, High, Low) and the hazard ratio table showed ratios as Placebo versus xanomeline. Run 2 fixed both (dose-ordered labels, `diff=ref`) and added a contrast for high vs low dose, but the copy that was run had the contrast coefficients in the wrong order, so the line labelled "High dose vs low dose" showed 0.825 (the inverse). Run 3, with the coefficients corrected, shows 1.2118 (0.8496 to 1.7283), matching the independent calculation. The saved log, results, RTF and PNG files are from run 3. Earlier run logs were not kept. The two proportional hazards plots were saved as `05_km_ph_low_dose.png` and `05_km_ph_high_dose.png` (SAS named them `05_km_dermatologic1.png` and `05_km_dermatologic2.png`).
