@@ -112,9 +112,11 @@ run;
 
 title "ADTTE check 4: every ADAE first dermatologic event is in ADTTE (expect 152 = 152)";
 proc sql;
-  select (select count(*) from adam.adae where aocc01fl = 'Y') as n_adae_first_derm,
-         (select count(distinct usubjid) from adam.adae where aocc01fl = 'Y') as n_adae_subjects,
-         (select count(*) from adam.adtte where cnsr = 0) as n_adtte_events;
+  select count(*) as n_adtte_events,
+         (select count(*) from adam.adae where aocc01fl = 'Y') as n_adae_first_derm,
+         (select count(distinct usubjid) from adam.adae where aocc01fl = 'Y') as n_adae_subjects
+  from adam.adtte
+  where cnsr = 0;
 quit;
 
 title "ADTTE check 5: analysis value (days from first dose); minimum should be at least 1";
