@@ -19,11 +19,11 @@ This is a skills demonstration of SAS programming and CDISC standards, not a new
 | `02_adae.sas` | Adverse events analysis dataset (1,191 records, 55 variables) | `docs/adae_spec.md` |
 | `03_adtte.sas` | Time to first dermatologic adverse event (254 subjects, 26 variables) | `docs/adtte_spec.md` |
 | `90_qc_adsl.sas`, `91_qc_adae.sas`, `92_qc_adtte.sas` | PROC COMPARE against the PHUSE reference datasets | `docs/9x_qc_*_results.html` |
-| `04_tables.sas` | Tables 1 to 6: populations, baseline, disposition, exposure, adverse event overview, adverse events by body system and term | `output/04_tables.rtf` |
-| `05_km_cox.sas` | Kaplan-Meier curves, log-rank test, Cox model, proportional hazards check (Figure 1, Tables 7 to 9) | `output/05_km_cox.rtf`, `output/05_km_*.png` |
-| `06_mixed_model.sas` | ANCOVA, dose response test and repeated measures model for ADAS-Cog(11) (Tables 10 to 12, Figure 2) | `output/06_mixed_model.rtf`, `output/06_adascog_lsmeans.png` |
+| `04_tables.sas` | Tables 1 to 6: populations, baseline, disposition, exposure, adverse event overview, adverse events by body system and term | `output/04_tables.pdf`, `.rtf` |
+| `05_km_cox.sas` | Kaplan-Meier curves, log-rank test, Cox model, proportional hazards check (Figure 1, Tables 7 to 9) | `output/05_km_cox.pdf`, `.rtf`, `output/05_km_*.png` |
+| `06_mixed_model.sas` | ANCOVA, dose response test and repeated measures model for ADAS-Cog(11) (Tables 10 to 12, Figure 2) | `output/06_mixed_model.pdf`, `.rtf`, `output/06_adascog_lsmeans.png` |
 
-Every run has its log in `logs/`, the Results viewer output in `docs/`, and each program has a line in `docs/validation_checklist.md`.
+Every run has its log in `logs/`, the Results viewer output in `docs/` (HTML; download to view in a browser), and each program has a line in `docs/validation_checklist.md`.
 
 ```
 ├── README.md
@@ -32,12 +32,22 @@ Every run has its log in `logs/`, the Results viewer output in `docs/`, and each
 │   ├── adam_ref/   # PHUSE reference ADaM .xpt files (QC and ADQSADAS input)
 │   └── adam/       # derived ADaM datasets (created by the programs, not committed)
 ├── programs/       # numbered SAS programs, run in order
-├── output/         # RTF tables and PNG figures
+├── output/         # PDF and RTF tables, PNG figures
 ├── logs/           # saved SAS logs
 └── docs/           # dataset specifications, validation checklist, saved results
 ```
 
 ## Results at a glance
+
+Full tables as PDF: [Tables 1 to 6](output/04_tables.pdf) (populations, baseline, disposition, exposure, adverse events), [Figure 1 and Tables 7 to 9](output/05_km_cox.pdf) (time to dermatologic event), [Tables 10 to 12 and Figure 2](output/06_mixed_model.pdf) (ADAS-Cog). The original RTF files from SAS are alongside them in `output/`.
+
+![Kaplan-Meier curves of time to first dermatologic adverse event by treatment arm](output/05_km_dermatologic.png)
+
+*Figure 1. Time to first dermatologic adverse event, safety population (SAS PROC LIFETEST). "Survival probability" is the probability of remaining free of the event; numbers at risk are shown below the plot.*
+
+![Least squares mean change from baseline in ADAS-Cog(11) by visit and treatment arm](output/06_adascog_lsmeans.png)
+
+*Figure 2. ADAS-Cog(11) LS mean change from baseline with 95% confidence intervals, repeated measures model (SAS PROC MIXED). A higher score is worse.*
 
 These numbers are re-derived outside SAS (pandas and scipy) before each SAS program was written, and the SAS output was compared with them.
 
